@@ -1,0 +1,8 @@
+{
+"alipay_partner":["","合作身份者ID，签约账号，以2088开头由16位纯数字组成的字符串，查看地址：https://b.alipay.com/order/pidAndKey.htm"],
+"alipay_seller_id":["","收款支付宝账号，以2088开头由16位纯数字组成的字符串，一般情况下收款账号就是签约账号"],
+"alipay_key":["","MD5密钥，安全检验码，由数字和字母组成的32位字符串，查看地址：https://b.alipay.com/order/pidAndKey.htm"],
+"alipay_notify_url":["http://www.onceyun.com/ThreeCSSPay/alipay_notify","服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问"],
+"alipay_return_url":["http://www.onceyun.com/ThreeCSSPay/alipay_return","页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问"],
+"ucenter_url":["http://www.onceyun.com/ThreeCSSIdentity/s","用户中心地址"]
+}
