@@ -1,0 +1,10 @@
+syntax = "proto3";
+package protobuf.http;
+message GetPayHTMLC{
+	int32 hOpCode=1;
+	string orderRecordId=2;//订单id
+}
+message GetPayHTMLS{
+	int32 hOpCode=1;
+	string payHtml=2;//支付界面
+}
