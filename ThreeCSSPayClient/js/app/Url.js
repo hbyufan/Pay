@@ -1,5 +1,5 @@
 function Url() {
-	this.url = "http://172.27.108.179:8080/PayCenter/s";
-	this.ucUrl = "http://172.27.108.179:8081/UCenter/s";
+	this.url = "http://localhost:8081/ThreeCSSPay/s";
+	this.ucUrl = "http://localhost:8080/ThreeCSSIdentity/s";
 }
 $T.url = new Url();
