@@ -1218,6 +1218,2497 @@ public final class PayProto {
 
   }
 
+  public interface GetReturnUrlCOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protobuf.http.GetReturnUrlC)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int32 hOpCode = 1;</code>
+     */
+    int getHOpCode();
+
+    /**
+     * <pre>
+     *订单id
+     * </pre>
+     *
+     * <code>optional string orderRecordId = 2;</code>
+     */
+    java.lang.String getOrderRecordId();
+    /**
+     * <pre>
+     *订单id
+     * </pre>
+     *
+     * <code>optional string orderRecordId = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getOrderRecordIdBytes();
+  }
+  /**
+   * Protobuf type {@code protobuf.http.GetReturnUrlC}
+   */
+  public  static final class GetReturnUrlC extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protobuf.http.GetReturnUrlC)
+      GetReturnUrlCOrBuilder {
+    // Use GetReturnUrlC.newBuilder() to construct.
+    private GetReturnUrlC(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetReturnUrlC() {
+      hOpCode_ = 0;
+      orderRecordId_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private GetReturnUrlC(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              hOpCode_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              orderRecordId_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return protobuf.http.PayProto.internal_static_protobuf_http_GetReturnUrlC_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return protobuf.http.PayProto.internal_static_protobuf_http_GetReturnUrlC_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              protobuf.http.PayProto.GetReturnUrlC.class, protobuf.http.PayProto.GetReturnUrlC.Builder.class);
+    }
+
+    public static final int HOPCODE_FIELD_NUMBER = 1;
+    private int hOpCode_;
+    /**
+     * <code>optional int32 hOpCode = 1;</code>
+     */
+    public int getHOpCode() {
+      return hOpCode_;
+    }
+
+    public static final int ORDERRECORDID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object orderRecordId_;
+    /**
+     * <pre>
+     *订单id
+     * </pre>
+     *
+     * <code>optional string orderRecordId = 2;</code>
+     */
+    public java.lang.String getOrderRecordId() {
+      java.lang.Object ref = orderRecordId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        orderRecordId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *订单id
+     * </pre>
+     *
+     * <code>optional string orderRecordId = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOrderRecordIdBytes() {
+      java.lang.Object ref = orderRecordId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        orderRecordId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (hOpCode_ != 0) {
+        output.writeInt32(1, hOpCode_);
+      }
+      if (!getOrderRecordIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, orderRecordId_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (hOpCode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, hOpCode_);
+      }
+      if (!getOrderRecordIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, orderRecordId_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof protobuf.http.PayProto.GetReturnUrlC)) {
+        return super.equals(obj);
+      }
+      protobuf.http.PayProto.GetReturnUrlC other = (protobuf.http.PayProto.GetReturnUrlC) obj;
+
+      boolean result = true;
+      result = result && (getHOpCode()
+          == other.getHOpCode());
+      result = result && getOrderRecordId()
+          .equals(other.getOrderRecordId());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + HOPCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getHOpCode();
+      hash = (37 * hash) + ORDERRECORDID_FIELD_NUMBER;
+      hash = (53 * hash) + getOrderRecordId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static protobuf.http.PayProto.GetReturnUrlC parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static protobuf.http.PayProto.GetReturnUrlC parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static protobuf.http.PayProto.GetReturnUrlC parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static protobuf.http.PayProto.GetReturnUrlC parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static protobuf.http.PayProto.GetReturnUrlC parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static protobuf.http.PayProto.GetReturnUrlC parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static protobuf.http.PayProto.GetReturnUrlC parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static protobuf.http.PayProto.GetReturnUrlC parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static protobuf.http.PayProto.GetReturnUrlC parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static protobuf.http.PayProto.GetReturnUrlC parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(protobuf.http.PayProto.GetReturnUrlC prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code protobuf.http.GetReturnUrlC}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protobuf.http.GetReturnUrlC)
+        protobuf.http.PayProto.GetReturnUrlCOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return protobuf.http.PayProto.internal_static_protobuf_http_GetReturnUrlC_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return protobuf.http.PayProto.internal_static_protobuf_http_GetReturnUrlC_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                protobuf.http.PayProto.GetReturnUrlC.class, protobuf.http.PayProto.GetReturnUrlC.Builder.class);
+      }
+
+      // Construct using protobuf.http.PayProto.GetReturnUrlC.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        hOpCode_ = 0;
+
+        orderRecordId_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return protobuf.http.PayProto.internal_static_protobuf_http_GetReturnUrlC_descriptor;
+      }
+
+      public protobuf.http.PayProto.GetReturnUrlC getDefaultInstanceForType() {
+        return protobuf.http.PayProto.GetReturnUrlC.getDefaultInstance();
+      }
+
+      public protobuf.http.PayProto.GetReturnUrlC build() {
+        protobuf.http.PayProto.GetReturnUrlC result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public protobuf.http.PayProto.GetReturnUrlC buildPartial() {
+        protobuf.http.PayProto.GetReturnUrlC result = new protobuf.http.PayProto.GetReturnUrlC(this);
+        result.hOpCode_ = hOpCode_;
+        result.orderRecordId_ = orderRecordId_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof protobuf.http.PayProto.GetReturnUrlC) {
+          return mergeFrom((protobuf.http.PayProto.GetReturnUrlC)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(protobuf.http.PayProto.GetReturnUrlC other) {
+        if (other == protobuf.http.PayProto.GetReturnUrlC.getDefaultInstance()) return this;
+        if (other.getHOpCode() != 0) {
+          setHOpCode(other.getHOpCode());
+        }
+        if (!other.getOrderRecordId().isEmpty()) {
+          orderRecordId_ = other.orderRecordId_;
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        protobuf.http.PayProto.GetReturnUrlC parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (protobuf.http.PayProto.GetReturnUrlC) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int hOpCode_ ;
+      /**
+       * <code>optional int32 hOpCode = 1;</code>
+       */
+      public int getHOpCode() {
+        return hOpCode_;
+      }
+      /**
+       * <code>optional int32 hOpCode = 1;</code>
+       */
+      public Builder setHOpCode(int value) {
+        
+        hOpCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 hOpCode = 1;</code>
+       */
+      public Builder clearHOpCode() {
+        
+        hOpCode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object orderRecordId_ = "";
+      /**
+       * <pre>
+       *订单id
+       * </pre>
+       *
+       * <code>optional string orderRecordId = 2;</code>
+       */
+      public java.lang.String getOrderRecordId() {
+        java.lang.Object ref = orderRecordId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          orderRecordId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *订单id
+       * </pre>
+       *
+       * <code>optional string orderRecordId = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOrderRecordIdBytes() {
+        java.lang.Object ref = orderRecordId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          orderRecordId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *订单id
+       * </pre>
+       *
+       * <code>optional string orderRecordId = 2;</code>
+       */
+      public Builder setOrderRecordId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        orderRecordId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *订单id
+       * </pre>
+       *
+       * <code>optional string orderRecordId = 2;</code>
+       */
+      public Builder clearOrderRecordId() {
+        
+        orderRecordId_ = getDefaultInstance().getOrderRecordId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *订单id
+       * </pre>
+       *
+       * <code>optional string orderRecordId = 2;</code>
+       */
+      public Builder setOrderRecordIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        orderRecordId_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protobuf.http.GetReturnUrlC)
+    }
+
+    // @@protoc_insertion_point(class_scope:protobuf.http.GetReturnUrlC)
+    private static final protobuf.http.PayProto.GetReturnUrlC DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new protobuf.http.PayProto.GetReturnUrlC();
+    }
+
+    public static protobuf.http.PayProto.GetReturnUrlC getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetReturnUrlC>
+        PARSER = new com.google.protobuf.AbstractParser<GetReturnUrlC>() {
+      public GetReturnUrlC parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new GetReturnUrlC(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetReturnUrlC> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetReturnUrlC> getParserForType() {
+      return PARSER;
+    }
+
+    public protobuf.http.PayProto.GetReturnUrlC getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetReturnUrlSOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protobuf.http.GetReturnUrlS)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int32 hOpCode = 1;</code>
+     */
+    int getHOpCode();
+
+    /**
+     * <pre>
+     *回调地址
+     * </pre>
+     *
+     * <code>optional string returnUrl = 2;</code>
+     */
+    java.lang.String getReturnUrl();
+    /**
+     * <pre>
+     *回调地址
+     * </pre>
+     *
+     * <code>optional string returnUrl = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getReturnUrlBytes();
+  }
+  /**
+   * Protobuf type {@code protobuf.http.GetReturnUrlS}
+   */
+  public  static final class GetReturnUrlS extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protobuf.http.GetReturnUrlS)
+      GetReturnUrlSOrBuilder {
+    // Use GetReturnUrlS.newBuilder() to construct.
+    private GetReturnUrlS(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetReturnUrlS() {
+      hOpCode_ = 0;
+      returnUrl_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private GetReturnUrlS(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              hOpCode_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              returnUrl_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return protobuf.http.PayProto.internal_static_protobuf_http_GetReturnUrlS_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return protobuf.http.PayProto.internal_static_protobuf_http_GetReturnUrlS_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              protobuf.http.PayProto.GetReturnUrlS.class, protobuf.http.PayProto.GetReturnUrlS.Builder.class);
+    }
+
+    public static final int HOPCODE_FIELD_NUMBER = 1;
+    private int hOpCode_;
+    /**
+     * <code>optional int32 hOpCode = 1;</code>
+     */
+    public int getHOpCode() {
+      return hOpCode_;
+    }
+
+    public static final int RETURNURL_FIELD_NUMBER = 2;
+    private volatile java.lang.Object returnUrl_;
+    /**
+     * <pre>
+     *回调地址
+     * </pre>
+     *
+     * <code>optional string returnUrl = 2;</code>
+     */
+    public java.lang.String getReturnUrl() {
+      java.lang.Object ref = returnUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        returnUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *回调地址
+     * </pre>
+     *
+     * <code>optional string returnUrl = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getReturnUrlBytes() {
+      java.lang.Object ref = returnUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        returnUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (hOpCode_ != 0) {
+        output.writeInt32(1, hOpCode_);
+      }
+      if (!getReturnUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, returnUrl_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (hOpCode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, hOpCode_);
+      }
+      if (!getReturnUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, returnUrl_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof protobuf.http.PayProto.GetReturnUrlS)) {
+        return super.equals(obj);
+      }
+      protobuf.http.PayProto.GetReturnUrlS other = (protobuf.http.PayProto.GetReturnUrlS) obj;
+
+      boolean result = true;
+      result = result && (getHOpCode()
+          == other.getHOpCode());
+      result = result && getReturnUrl()
+          .equals(other.getReturnUrl());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + HOPCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getHOpCode();
+      hash = (37 * hash) + RETURNURL_FIELD_NUMBER;
+      hash = (53 * hash) + getReturnUrl().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static protobuf.http.PayProto.GetReturnUrlS parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static protobuf.http.PayProto.GetReturnUrlS parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static protobuf.http.PayProto.GetReturnUrlS parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static protobuf.http.PayProto.GetReturnUrlS parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static protobuf.http.PayProto.GetReturnUrlS parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static protobuf.http.PayProto.GetReturnUrlS parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static protobuf.http.PayProto.GetReturnUrlS parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static protobuf.http.PayProto.GetReturnUrlS parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static protobuf.http.PayProto.GetReturnUrlS parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static protobuf.http.PayProto.GetReturnUrlS parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(protobuf.http.PayProto.GetReturnUrlS prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code protobuf.http.GetReturnUrlS}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protobuf.http.GetReturnUrlS)
+        protobuf.http.PayProto.GetReturnUrlSOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return protobuf.http.PayProto.internal_static_protobuf_http_GetReturnUrlS_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return protobuf.http.PayProto.internal_static_protobuf_http_GetReturnUrlS_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                protobuf.http.PayProto.GetReturnUrlS.class, protobuf.http.PayProto.GetReturnUrlS.Builder.class);
+      }
+
+      // Construct using protobuf.http.PayProto.GetReturnUrlS.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        hOpCode_ = 0;
+
+        returnUrl_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return protobuf.http.PayProto.internal_static_protobuf_http_GetReturnUrlS_descriptor;
+      }
+
+      public protobuf.http.PayProto.GetReturnUrlS getDefaultInstanceForType() {
+        return protobuf.http.PayProto.GetReturnUrlS.getDefaultInstance();
+      }
+
+      public protobuf.http.PayProto.GetReturnUrlS build() {
+        protobuf.http.PayProto.GetReturnUrlS result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public protobuf.http.PayProto.GetReturnUrlS buildPartial() {
+        protobuf.http.PayProto.GetReturnUrlS result = new protobuf.http.PayProto.GetReturnUrlS(this);
+        result.hOpCode_ = hOpCode_;
+        result.returnUrl_ = returnUrl_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof protobuf.http.PayProto.GetReturnUrlS) {
+          return mergeFrom((protobuf.http.PayProto.GetReturnUrlS)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(protobuf.http.PayProto.GetReturnUrlS other) {
+        if (other == protobuf.http.PayProto.GetReturnUrlS.getDefaultInstance()) return this;
+        if (other.getHOpCode() != 0) {
+          setHOpCode(other.getHOpCode());
+        }
+        if (!other.getReturnUrl().isEmpty()) {
+          returnUrl_ = other.returnUrl_;
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        protobuf.http.PayProto.GetReturnUrlS parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (protobuf.http.PayProto.GetReturnUrlS) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int hOpCode_ ;
+      /**
+       * <code>optional int32 hOpCode = 1;</code>
+       */
+      public int getHOpCode() {
+        return hOpCode_;
+      }
+      /**
+       * <code>optional int32 hOpCode = 1;</code>
+       */
+      public Builder setHOpCode(int value) {
+        
+        hOpCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 hOpCode = 1;</code>
+       */
+      public Builder clearHOpCode() {
+        
+        hOpCode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object returnUrl_ = "";
+      /**
+       * <pre>
+       *回调地址
+       * </pre>
+       *
+       * <code>optional string returnUrl = 2;</code>
+       */
+      public java.lang.String getReturnUrl() {
+        java.lang.Object ref = returnUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          returnUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *回调地址
+       * </pre>
+       *
+       * <code>optional string returnUrl = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getReturnUrlBytes() {
+        java.lang.Object ref = returnUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          returnUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *回调地址
+       * </pre>
+       *
+       * <code>optional string returnUrl = 2;</code>
+       */
+      public Builder setReturnUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        returnUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *回调地址
+       * </pre>
+       *
+       * <code>optional string returnUrl = 2;</code>
+       */
+      public Builder clearReturnUrl() {
+        
+        returnUrl_ = getDefaultInstance().getReturnUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *回调地址
+       * </pre>
+       *
+       * <code>optional string returnUrl = 2;</code>
+       */
+      public Builder setReturnUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        returnUrl_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protobuf.http.GetReturnUrlS)
+    }
+
+    // @@protoc_insertion_point(class_scope:protobuf.http.GetReturnUrlS)
+    private static final protobuf.http.PayProto.GetReturnUrlS DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new protobuf.http.PayProto.GetReturnUrlS();
+    }
+
+    public static protobuf.http.PayProto.GetReturnUrlS getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetReturnUrlS>
+        PARSER = new com.google.protobuf.AbstractParser<GetReturnUrlS>() {
+      public GetReturnUrlS parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new GetReturnUrlS(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetReturnUrlS> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetReturnUrlS> getParserForType() {
+      return PARSER;
+    }
+
+    public protobuf.http.PayProto.GetReturnUrlS getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface VerifyNotifyCOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protobuf.http.VerifyNotifyC)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int32 hOpCode = 1;</code>
+     */
+    int getHOpCode();
+
+    /**
+     * <pre>
+     *通知id
+     * </pre>
+     *
+     * <code>optional string notifyId = 2;</code>
+     */
+    java.lang.String getNotifyId();
+    /**
+     * <pre>
+     *通知id
+     * </pre>
+     *
+     * <code>optional string notifyId = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getNotifyIdBytes();
+
+    /**
+     * <pre>
+     *应用id
+     * </pre>
+     *
+     * <code>optional string appId = 3;</code>
+     */
+    java.lang.String getAppId();
+    /**
+     * <pre>
+     *应用id
+     * </pre>
+     *
+     * <code>optional string appId = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getAppIdBytes();
+  }
+  /**
+   * Protobuf type {@code protobuf.http.VerifyNotifyC}
+   */
+  public  static final class VerifyNotifyC extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protobuf.http.VerifyNotifyC)
+      VerifyNotifyCOrBuilder {
+    // Use VerifyNotifyC.newBuilder() to construct.
+    private VerifyNotifyC(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private VerifyNotifyC() {
+      hOpCode_ = 0;
+      notifyId_ = "";
+      appId_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private VerifyNotifyC(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              hOpCode_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              notifyId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              appId_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return protobuf.http.PayProto.internal_static_protobuf_http_VerifyNotifyC_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return protobuf.http.PayProto.internal_static_protobuf_http_VerifyNotifyC_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              protobuf.http.PayProto.VerifyNotifyC.class, protobuf.http.PayProto.VerifyNotifyC.Builder.class);
+    }
+
+    public static final int HOPCODE_FIELD_NUMBER = 1;
+    private int hOpCode_;
+    /**
+     * <code>optional int32 hOpCode = 1;</code>
+     */
+    public int getHOpCode() {
+      return hOpCode_;
+    }
+
+    public static final int NOTIFYID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object notifyId_;
+    /**
+     * <pre>
+     *通知id
+     * </pre>
+     *
+     * <code>optional string notifyId = 2;</code>
+     */
+    public java.lang.String getNotifyId() {
+      java.lang.Object ref = notifyId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        notifyId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *通知id
+     * </pre>
+     *
+     * <code>optional string notifyId = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNotifyIdBytes() {
+      java.lang.Object ref = notifyId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        notifyId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int APPID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object appId_;
+    /**
+     * <pre>
+     *应用id
+     * </pre>
+     *
+     * <code>optional string appId = 3;</code>
+     */
+    public java.lang.String getAppId() {
+      java.lang.Object ref = appId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        appId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *应用id
+     * </pre>
+     *
+     * <code>optional string appId = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAppIdBytes() {
+      java.lang.Object ref = appId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        appId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (hOpCode_ != 0) {
+        output.writeInt32(1, hOpCode_);
+      }
+      if (!getNotifyIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, notifyId_);
+      }
+      if (!getAppIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, appId_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (hOpCode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, hOpCode_);
+      }
+      if (!getNotifyIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, notifyId_);
+      }
+      if (!getAppIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, appId_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof protobuf.http.PayProto.VerifyNotifyC)) {
+        return super.equals(obj);
+      }
+      protobuf.http.PayProto.VerifyNotifyC other = (protobuf.http.PayProto.VerifyNotifyC) obj;
+
+      boolean result = true;
+      result = result && (getHOpCode()
+          == other.getHOpCode());
+      result = result && getNotifyId()
+          .equals(other.getNotifyId());
+      result = result && getAppId()
+          .equals(other.getAppId());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + HOPCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getHOpCode();
+      hash = (37 * hash) + NOTIFYID_FIELD_NUMBER;
+      hash = (53 * hash) + getNotifyId().hashCode();
+      hash = (37 * hash) + APPID_FIELD_NUMBER;
+      hash = (53 * hash) + getAppId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static protobuf.http.PayProto.VerifyNotifyC parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static protobuf.http.PayProto.VerifyNotifyC parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static protobuf.http.PayProto.VerifyNotifyC parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static protobuf.http.PayProto.VerifyNotifyC parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static protobuf.http.PayProto.VerifyNotifyC parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static protobuf.http.PayProto.VerifyNotifyC parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static protobuf.http.PayProto.VerifyNotifyC parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static protobuf.http.PayProto.VerifyNotifyC parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static protobuf.http.PayProto.VerifyNotifyC parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static protobuf.http.PayProto.VerifyNotifyC parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(protobuf.http.PayProto.VerifyNotifyC prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code protobuf.http.VerifyNotifyC}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protobuf.http.VerifyNotifyC)
+        protobuf.http.PayProto.VerifyNotifyCOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return protobuf.http.PayProto.internal_static_protobuf_http_VerifyNotifyC_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return protobuf.http.PayProto.internal_static_protobuf_http_VerifyNotifyC_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                protobuf.http.PayProto.VerifyNotifyC.class, protobuf.http.PayProto.VerifyNotifyC.Builder.class);
+      }
+
+      // Construct using protobuf.http.PayProto.VerifyNotifyC.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        hOpCode_ = 0;
+
+        notifyId_ = "";
+
+        appId_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return protobuf.http.PayProto.internal_static_protobuf_http_VerifyNotifyC_descriptor;
+      }
+
+      public protobuf.http.PayProto.VerifyNotifyC getDefaultInstanceForType() {
+        return protobuf.http.PayProto.VerifyNotifyC.getDefaultInstance();
+      }
+
+      public protobuf.http.PayProto.VerifyNotifyC build() {
+        protobuf.http.PayProto.VerifyNotifyC result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public protobuf.http.PayProto.VerifyNotifyC buildPartial() {
+        protobuf.http.PayProto.VerifyNotifyC result = new protobuf.http.PayProto.VerifyNotifyC(this);
+        result.hOpCode_ = hOpCode_;
+        result.notifyId_ = notifyId_;
+        result.appId_ = appId_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof protobuf.http.PayProto.VerifyNotifyC) {
+          return mergeFrom((protobuf.http.PayProto.VerifyNotifyC)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(protobuf.http.PayProto.VerifyNotifyC other) {
+        if (other == protobuf.http.PayProto.VerifyNotifyC.getDefaultInstance()) return this;
+        if (other.getHOpCode() != 0) {
+          setHOpCode(other.getHOpCode());
+        }
+        if (!other.getNotifyId().isEmpty()) {
+          notifyId_ = other.notifyId_;
+          onChanged();
+        }
+        if (!other.getAppId().isEmpty()) {
+          appId_ = other.appId_;
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        protobuf.http.PayProto.VerifyNotifyC parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (protobuf.http.PayProto.VerifyNotifyC) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int hOpCode_ ;
+      /**
+       * <code>optional int32 hOpCode = 1;</code>
+       */
+      public int getHOpCode() {
+        return hOpCode_;
+      }
+      /**
+       * <code>optional int32 hOpCode = 1;</code>
+       */
+      public Builder setHOpCode(int value) {
+        
+        hOpCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 hOpCode = 1;</code>
+       */
+      public Builder clearHOpCode() {
+        
+        hOpCode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object notifyId_ = "";
+      /**
+       * <pre>
+       *通知id
+       * </pre>
+       *
+       * <code>optional string notifyId = 2;</code>
+       */
+      public java.lang.String getNotifyId() {
+        java.lang.Object ref = notifyId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          notifyId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *通知id
+       * </pre>
+       *
+       * <code>optional string notifyId = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNotifyIdBytes() {
+        java.lang.Object ref = notifyId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          notifyId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *通知id
+       * </pre>
+       *
+       * <code>optional string notifyId = 2;</code>
+       */
+      public Builder setNotifyId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        notifyId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *通知id
+       * </pre>
+       *
+       * <code>optional string notifyId = 2;</code>
+       */
+      public Builder clearNotifyId() {
+        
+        notifyId_ = getDefaultInstance().getNotifyId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *通知id
+       * </pre>
+       *
+       * <code>optional string notifyId = 2;</code>
+       */
+      public Builder setNotifyIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        notifyId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object appId_ = "";
+      /**
+       * <pre>
+       *应用id
+       * </pre>
+       *
+       * <code>optional string appId = 3;</code>
+       */
+      public java.lang.String getAppId() {
+        java.lang.Object ref = appId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          appId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *应用id
+       * </pre>
+       *
+       * <code>optional string appId = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAppIdBytes() {
+        java.lang.Object ref = appId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          appId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *应用id
+       * </pre>
+       *
+       * <code>optional string appId = 3;</code>
+       */
+      public Builder setAppId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        appId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *应用id
+       * </pre>
+       *
+       * <code>optional string appId = 3;</code>
+       */
+      public Builder clearAppId() {
+        
+        appId_ = getDefaultInstance().getAppId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *应用id
+       * </pre>
+       *
+       * <code>optional string appId = 3;</code>
+       */
+      public Builder setAppIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        appId_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protobuf.http.VerifyNotifyC)
+    }
+
+    // @@protoc_insertion_point(class_scope:protobuf.http.VerifyNotifyC)
+    private static final protobuf.http.PayProto.VerifyNotifyC DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new protobuf.http.PayProto.VerifyNotifyC();
+    }
+
+    public static protobuf.http.PayProto.VerifyNotifyC getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<VerifyNotifyC>
+        PARSER = new com.google.protobuf.AbstractParser<VerifyNotifyC>() {
+      public VerifyNotifyC parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new VerifyNotifyC(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<VerifyNotifyC> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<VerifyNotifyC> getParserForType() {
+      return PARSER;
+    }
+
+    public protobuf.http.PayProto.VerifyNotifyC getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface VerifyNotifySOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protobuf.http.VerifyNotifyS)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int32 hOpCode = 1;</code>
+     */
+    int getHOpCode();
+
+    /**
+     * <pre>
+     *1有，2没有
+     * </pre>
+     *
+     * <code>optional int32 result = 2;</code>
+     */
+    int getResult();
+  }
+  /**
+   * Protobuf type {@code protobuf.http.VerifyNotifyS}
+   */
+  public  static final class VerifyNotifyS extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protobuf.http.VerifyNotifyS)
+      VerifyNotifySOrBuilder {
+    // Use VerifyNotifyS.newBuilder() to construct.
+    private VerifyNotifyS(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private VerifyNotifyS() {
+      hOpCode_ = 0;
+      result_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private VerifyNotifyS(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              hOpCode_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              result_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return protobuf.http.PayProto.internal_static_protobuf_http_VerifyNotifyS_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return protobuf.http.PayProto.internal_static_protobuf_http_VerifyNotifyS_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              protobuf.http.PayProto.VerifyNotifyS.class, protobuf.http.PayProto.VerifyNotifyS.Builder.class);
+    }
+
+    public static final int HOPCODE_FIELD_NUMBER = 1;
+    private int hOpCode_;
+    /**
+     * <code>optional int32 hOpCode = 1;</code>
+     */
+    public int getHOpCode() {
+      return hOpCode_;
+    }
+
+    public static final int RESULT_FIELD_NUMBER = 2;
+    private int result_;
+    /**
+     * <pre>
+     *1有，2没有
+     * </pre>
+     *
+     * <code>optional int32 result = 2;</code>
+     */
+    public int getResult() {
+      return result_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (hOpCode_ != 0) {
+        output.writeInt32(1, hOpCode_);
+      }
+      if (result_ != 0) {
+        output.writeInt32(2, result_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (hOpCode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, hOpCode_);
+      }
+      if (result_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, result_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof protobuf.http.PayProto.VerifyNotifyS)) {
+        return super.equals(obj);
+      }
+      protobuf.http.PayProto.VerifyNotifyS other = (protobuf.http.PayProto.VerifyNotifyS) obj;
+
+      boolean result = true;
+      result = result && (getHOpCode()
+          == other.getHOpCode());
+      result = result && (getResult()
+          == other.getResult());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + HOPCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getHOpCode();
+      hash = (37 * hash) + RESULT_FIELD_NUMBER;
+      hash = (53 * hash) + getResult();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static protobuf.http.PayProto.VerifyNotifyS parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static protobuf.http.PayProto.VerifyNotifyS parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static protobuf.http.PayProto.VerifyNotifyS parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static protobuf.http.PayProto.VerifyNotifyS parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static protobuf.http.PayProto.VerifyNotifyS parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static protobuf.http.PayProto.VerifyNotifyS parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static protobuf.http.PayProto.VerifyNotifyS parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static protobuf.http.PayProto.VerifyNotifyS parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static protobuf.http.PayProto.VerifyNotifyS parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static protobuf.http.PayProto.VerifyNotifyS parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(protobuf.http.PayProto.VerifyNotifyS prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code protobuf.http.VerifyNotifyS}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protobuf.http.VerifyNotifyS)
+        protobuf.http.PayProto.VerifyNotifySOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return protobuf.http.PayProto.internal_static_protobuf_http_VerifyNotifyS_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return protobuf.http.PayProto.internal_static_protobuf_http_VerifyNotifyS_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                protobuf.http.PayProto.VerifyNotifyS.class, protobuf.http.PayProto.VerifyNotifyS.Builder.class);
+      }
+
+      // Construct using protobuf.http.PayProto.VerifyNotifyS.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        hOpCode_ = 0;
+
+        result_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return protobuf.http.PayProto.internal_static_protobuf_http_VerifyNotifyS_descriptor;
+      }
+
+      public protobuf.http.PayProto.VerifyNotifyS getDefaultInstanceForType() {
+        return protobuf.http.PayProto.VerifyNotifyS.getDefaultInstance();
+      }
+
+      public protobuf.http.PayProto.VerifyNotifyS build() {
+        protobuf.http.PayProto.VerifyNotifyS result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public protobuf.http.PayProto.VerifyNotifyS buildPartial() {
+        protobuf.http.PayProto.VerifyNotifyS result = new protobuf.http.PayProto.VerifyNotifyS(this);
+        result.hOpCode_ = hOpCode_;
+        result.result_ = result_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof protobuf.http.PayProto.VerifyNotifyS) {
+          return mergeFrom((protobuf.http.PayProto.VerifyNotifyS)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(protobuf.http.PayProto.VerifyNotifyS other) {
+        if (other == protobuf.http.PayProto.VerifyNotifyS.getDefaultInstance()) return this;
+        if (other.getHOpCode() != 0) {
+          setHOpCode(other.getHOpCode());
+        }
+        if (other.getResult() != 0) {
+          setResult(other.getResult());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        protobuf.http.PayProto.VerifyNotifyS parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (protobuf.http.PayProto.VerifyNotifyS) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int hOpCode_ ;
+      /**
+       * <code>optional int32 hOpCode = 1;</code>
+       */
+      public int getHOpCode() {
+        return hOpCode_;
+      }
+      /**
+       * <code>optional int32 hOpCode = 1;</code>
+       */
+      public Builder setHOpCode(int value) {
+        
+        hOpCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 hOpCode = 1;</code>
+       */
+      public Builder clearHOpCode() {
+        
+        hOpCode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int result_ ;
+      /**
+       * <pre>
+       *1有，2没有
+       * </pre>
+       *
+       * <code>optional int32 result = 2;</code>
+       */
+      public int getResult() {
+        return result_;
+      }
+      /**
+       * <pre>
+       *1有，2没有
+       * </pre>
+       *
+       * <code>optional int32 result = 2;</code>
+       */
+      public Builder setResult(int value) {
+        
+        result_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *1有，2没有
+       * </pre>
+       *
+       * <code>optional int32 result = 2;</code>
+       */
+      public Builder clearResult() {
+        
+        result_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protobuf.http.VerifyNotifyS)
+    }
+
+    // @@protoc_insertion_point(class_scope:protobuf.http.VerifyNotifyS)
+    private static final protobuf.http.PayProto.VerifyNotifyS DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new protobuf.http.PayProto.VerifyNotifyS();
+    }
+
+    public static protobuf.http.PayProto.VerifyNotifyS getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<VerifyNotifyS>
+        PARSER = new com.google.protobuf.AbstractParser<VerifyNotifyS>() {
+      public VerifyNotifyS parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new VerifyNotifyS(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<VerifyNotifyS> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<VerifyNotifyS> getParserForType() {
+      return PARSER;
+    }
+
+    public protobuf.http.PayProto.VerifyNotifyS getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_protobuf_http_GetPayHTMLC_descriptor;
   private static final 
@@ -1228,6 +3719,26 @@ public final class PayProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_protobuf_http_GetPayHTMLS_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protobuf_http_GetReturnUrlC_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protobuf_http_GetReturnUrlC_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protobuf_http_GetReturnUrlS_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protobuf_http_GetReturnUrlS_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protobuf_http_VerifyNotifyC_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protobuf_http_VerifyNotifyC_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protobuf_http_VerifyNotifyS_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protobuf_http_VerifyNotifyS_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1240,7 +3751,13 @@ public final class PayProto {
       "\n\016PayProto.proto\022\rprotobuf.http\"5\n\013GetPa" +
       "yHTMLC\022\017\n\007hOpCode\030\001 \001(\005\022\025\n\rorderRecordId" +
       "\030\002 \001(\t\"/\n\013GetPayHTMLS\022\017\n\007hOpCode\030\001 \001(\005\022\017" +
-      "\n\007payHtml\030\002 \001(\tb\006proto3"
+      "\n\007payHtml\030\002 \001(\t\"7\n\rGetReturnUrlC\022\017\n\007hOpC" +
+      "ode\030\001 \001(\005\022\025\n\rorderRecordId\030\002 \001(\t\"3\n\rGetR" +
+      "eturnUrlS\022\017\n\007hOpCode\030\001 \001(\005\022\021\n\treturnUrl\030" +
+      "\002 \001(\t\"A\n\rVerifyNotifyC\022\017\n\007hOpCode\030\001 \001(\005\022" +
+      "\020\n\010notifyId\030\002 \001(\t\022\r\n\005appId\030\003 \001(\t\"0\n\rVeri" +
+      "fyNotifyS\022\017\n\007hOpCode\030\001 \001(\005\022\016\n\006result\030\002 \001" +
+      "(\005b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1266,6 +3783,30 @@ public final class PayProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protobuf_http_GetPayHTMLS_descriptor,
         new java.lang.String[] { "HOpCode", "PayHtml", });
+    internal_static_protobuf_http_GetReturnUrlC_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_protobuf_http_GetReturnUrlC_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protobuf_http_GetReturnUrlC_descriptor,
+        new java.lang.String[] { "HOpCode", "OrderRecordId", });
+    internal_static_protobuf_http_GetReturnUrlS_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_protobuf_http_GetReturnUrlS_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protobuf_http_GetReturnUrlS_descriptor,
+        new java.lang.String[] { "HOpCode", "ReturnUrl", });
+    internal_static_protobuf_http_VerifyNotifyC_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_protobuf_http_VerifyNotifyC_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protobuf_http_VerifyNotifyC_descriptor,
+        new java.lang.String[] { "HOpCode", "NotifyId", "AppId", });
+    internal_static_protobuf_http_VerifyNotifyS_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_protobuf_http_VerifyNotifyS_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protobuf_http_VerifyNotifyS_descriptor,
+        new java.lang.String[] { "HOpCode", "Result", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

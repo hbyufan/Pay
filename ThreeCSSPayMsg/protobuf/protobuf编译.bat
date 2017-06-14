@@ -5,4 +5,5 @@ protoc --java_out=./ PCErrorProto.proto
 protoc --java_out=./ OrderRecordProto.proto
 protoc --java_out=./ PayProto.proto
 protoc --java_out=./ LoginProto.proto
+protoc --java_out=./ AddNotify.proto
 pause

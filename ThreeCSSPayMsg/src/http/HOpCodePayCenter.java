@@ -21,6 +21,10 @@ import protobuf.http.OrderRecordProto.UpdateOrderRecordS;
 import protobuf.http.PCErrorProto.PCError;
 import protobuf.http.PayProto.GetPayHTMLC;
 import protobuf.http.PayProto.GetPayHTMLS;
+import protobuf.http.PayProto.GetReturnUrlC;
+import protobuf.http.PayProto.GetReturnUrlS;
+import protobuf.http.PayProto.VerifyNotifyC;
+import protobuf.http.PayProto.VerifyNotifyS;
 
 public class HOpCodePayCenter extends HOpCode {
 
@@ -37,6 +41,8 @@ public class HOpCodePayCenter extends HOpCode {
 	public static int GET_ORDER_RECORD_LIST = 213;
 
 	public static int GET_PAY_HTML = 220;
+	public static int GET_RETURN_URL = 221;
+	public static int VERIFY_NOTIFY = 222;
 
 	public static int LOGIN = 230;
 
@@ -91,6 +97,16 @@ public class HOpCodePayCenter extends HOpCode {
 		sendAndReturn[0] = GetPayHTMLC.class;
 		sendAndReturn[1] = GetPayHTMLS.class;
 		hOpCodeMap.put(GET_PAY_HTML, sendAndReturn);
+
+		sendAndReturn = new Class[2];
+		sendAndReturn[0] = GetReturnUrlC.class;
+		sendAndReturn[1] = GetReturnUrlS.class;
+		hOpCodeMap.put(GET_RETURN_URL, sendAndReturn);
+
+		sendAndReturn = new Class[2];
+		sendAndReturn[0] = VerifyNotifyC.class;
+		sendAndReturn[1] = VerifyNotifyS.class;
+		hOpCodeMap.put(VERIFY_NOTIFY, sendAndReturn);
 
 		sendAndReturn = new Class[2];
 		sendAndReturn[0] = LoginC.class;

@@ -1,16 +1,16 @@
 syntax = "proto3";
 package protobuf.http;
 message CreateOrderRecordC{
-	int32 hOpCode=1;
-	string appId=2;//
-	string orderRecordOrderId=3;//订单id与appid联合唯一
-	double orderRecordTotalPrice=4;//总价格
-	string orderRecordUserId=5;
-	string orderRecordOrderDetail=6;//订单详情
-	string orderRecordUserName=7;//用户名
-	string orderRecordReturnUrl=8;
-	string orderRecordNotifyUrl=9;
-	repeated OrderGoodsSendData orderGoodsArray=10;
+	int32 hOpCode=1;//必有
+	string appId=2;//必有
+	string orderRecordOrderId=3;//订单id与appid联合唯一，必有
+	double orderRecordTotalPrice=4;//总价格，必有
+	string orderRecordUserId=5;//必有
+	string orderRecordOrderDetail=6;//订单详情，可选
+	string orderRecordUserName=7;//用户名，可选
+	string orderRecordReturnUrl=8;//，可选
+	string orderRecordNotifyUrl=9;//，可选
+	repeated OrderGoodsSendData orderGoodsArray=10;//最少有一个
 }
 message CreateOrderRecordS{
 	int32 hOpCode=1;
@@ -88,12 +88,12 @@ message OrderRecordData{
 	repeated OrderGoodsData orderGoodsArray=23;
 }
 message OrderGoodsSendData{
-	string orderGoodsGoodsId=1;
-	string orderGoodsName=2;
-	double orderGoodsPrice=3;
-	int32 orderGoodsNumber=4;
-	string orderGoodsDetail=5;
-	string orderGoodsUrl=6;
+	string orderGoodsGoodsId=1;//必有
+	string orderGoodsName=2;//必有
+	double orderGoodsPrice=3;//必有
+	int32 orderGoodsNumber=4;//必有
+	string orderGoodsDetail=5;//可选
+	string orderGoodsUrl=6;//可选
 }
 message OrderGoodsData{
 	string orderGoodsId=1;

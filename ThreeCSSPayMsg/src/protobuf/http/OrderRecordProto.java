@@ -19,12 +19,17 @@ public final class OrderRecordProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     *必有
+     * </pre>
+     *
      * <code>optional int32 hOpCode = 1;</code>
      */
     int getHOpCode();
 
     /**
      * <pre>
+     *必有
      * </pre>
      *
      * <code>optional string appId = 2;</code>
@@ -32,6 +37,7 @@ public final class OrderRecordProto {
     java.lang.String getAppId();
     /**
      * <pre>
+     *必有
      * </pre>
      *
      * <code>optional string appId = 2;</code>
@@ -41,7 +47,7 @@ public final class OrderRecordProto {
 
     /**
      * <pre>
-     *订单id与appid联合唯一
+     *订单id与appid联合唯一，必有
      * </pre>
      *
      * <code>optional string orderRecordOrderId = 3;</code>
@@ -49,7 +55,7 @@ public final class OrderRecordProto {
     java.lang.String getOrderRecordOrderId();
     /**
      * <pre>
-     *订单id与appid联合唯一
+     *订单id与appid联合唯一，必有
      * </pre>
      *
      * <code>optional string orderRecordOrderId = 3;</code>
@@ -59,7 +65,7 @@ public final class OrderRecordProto {
 
     /**
      * <pre>
-     *总价格
+     *总价格，必有
      * </pre>
      *
      * <code>optional double orderRecordTotalPrice = 4;</code>
@@ -67,10 +73,18 @@ public final class OrderRecordProto {
     double getOrderRecordTotalPrice();
 
     /**
+     * <pre>
+     *必有
+     * </pre>
+     *
      * <code>optional string orderRecordUserId = 5;</code>
      */
     java.lang.String getOrderRecordUserId();
     /**
+     * <pre>
+     *必有
+     * </pre>
+     *
      * <code>optional string orderRecordUserId = 5;</code>
      */
     com.google.protobuf.ByteString
@@ -78,7 +92,7 @@ public final class OrderRecordProto {
 
     /**
      * <pre>
-     *订单详情
+     *订单详情，可选
      * </pre>
      *
      * <code>optional string orderRecordOrderDetail = 6;</code>
@@ -86,7 +100,7 @@ public final class OrderRecordProto {
     java.lang.String getOrderRecordOrderDetail();
     /**
      * <pre>
-     *订单详情
+     *订单详情，可选
      * </pre>
      *
      * <code>optional string orderRecordOrderDetail = 6;</code>
@@ -96,7 +110,7 @@ public final class OrderRecordProto {
 
     /**
      * <pre>
-     *用户名
+     *用户名，可选
      * </pre>
      *
      * <code>optional string orderRecordUserName = 7;</code>
@@ -104,7 +118,7 @@ public final class OrderRecordProto {
     java.lang.String getOrderRecordUserName();
     /**
      * <pre>
-     *用户名
+     *用户名，可选
      * </pre>
      *
      * <code>optional string orderRecordUserName = 7;</code>
@@ -113,44 +127,80 @@ public final class OrderRecordProto {
         getOrderRecordUserNameBytes();
 
     /**
+     * <pre>
+     *，可选
+     * </pre>
+     *
      * <code>optional string orderRecordReturnUrl = 8;</code>
      */
     java.lang.String getOrderRecordReturnUrl();
     /**
+     * <pre>
+     *，可选
+     * </pre>
+     *
      * <code>optional string orderRecordReturnUrl = 8;</code>
      */
     com.google.protobuf.ByteString
         getOrderRecordReturnUrlBytes();
 
     /**
+     * <pre>
+     *，可选
+     * </pre>
+     *
      * <code>optional string orderRecordNotifyUrl = 9;</code>
      */
     java.lang.String getOrderRecordNotifyUrl();
     /**
+     * <pre>
+     *，可选
+     * </pre>
+     *
      * <code>optional string orderRecordNotifyUrl = 9;</code>
      */
     com.google.protobuf.ByteString
         getOrderRecordNotifyUrlBytes();
 
     /**
+     * <pre>
+     *最少有一个
+     * </pre>
+     *
      * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
      */
     java.util.List<protobuf.http.OrderRecordProto.OrderGoodsSendData> 
         getOrderGoodsArrayList();
     /**
+     * <pre>
+     *最少有一个
+     * </pre>
+     *
      * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
      */
     protobuf.http.OrderRecordProto.OrderGoodsSendData getOrderGoodsArray(int index);
     /**
+     * <pre>
+     *最少有一个
+     * </pre>
+     *
      * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
      */
     int getOrderGoodsArrayCount();
     /**
+     * <pre>
+     *最少有一个
+     * </pre>
+     *
      * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
      */
     java.util.List<? extends protobuf.http.OrderRecordProto.OrderGoodsSendDataOrBuilder> 
         getOrderGoodsArrayOrBuilderList();
     /**
+     * <pre>
+     *最少有一个
+     * </pre>
+     *
      * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
      */
     protobuf.http.OrderRecordProto.OrderGoodsSendDataOrBuilder getOrderGoodsArrayOrBuilder(
@@ -296,6 +346,10 @@ public final class OrderRecordProto {
     public static final int HOPCODE_FIELD_NUMBER = 1;
     private int hOpCode_;
     /**
+     * <pre>
+     *必有
+     * </pre>
+     *
      * <code>optional int32 hOpCode = 1;</code>
      */
     public int getHOpCode() {
@@ -306,6 +360,7 @@ public final class OrderRecordProto {
     private volatile java.lang.Object appId_;
     /**
      * <pre>
+     *必有
      * </pre>
      *
      * <code>optional string appId = 2;</code>
@@ -324,6 +379,7 @@ public final class OrderRecordProto {
     }
     /**
      * <pre>
+     *必有
      * </pre>
      *
      * <code>optional string appId = 2;</code>
@@ -346,7 +402,7 @@ public final class OrderRecordProto {
     private volatile java.lang.Object orderRecordOrderId_;
     /**
      * <pre>
-     *订单id与appid联合唯一
+     *订单id与appid联合唯一，必有
      * </pre>
      *
      * <code>optional string orderRecordOrderId = 3;</code>
@@ -365,7 +421,7 @@ public final class OrderRecordProto {
     }
     /**
      * <pre>
-     *订单id与appid联合唯一
+     *订单id与appid联合唯一，必有
      * </pre>
      *
      * <code>optional string orderRecordOrderId = 3;</code>
@@ -388,7 +444,7 @@ public final class OrderRecordProto {
     private double orderRecordTotalPrice_;
     /**
      * <pre>
-     *总价格
+     *总价格，必有
      * </pre>
      *
      * <code>optional double orderRecordTotalPrice = 4;</code>
@@ -400,6 +456,10 @@ public final class OrderRecordProto {
     public static final int ORDERRECORDUSERID_FIELD_NUMBER = 5;
     private volatile java.lang.Object orderRecordUserId_;
     /**
+     * <pre>
+     *必有
+     * </pre>
+     *
      * <code>optional string orderRecordUserId = 5;</code>
      */
     public java.lang.String getOrderRecordUserId() {
@@ -415,6 +475,10 @@ public final class OrderRecordProto {
       }
     }
     /**
+     * <pre>
+     *必有
+     * </pre>
+     *
      * <code>optional string orderRecordUserId = 5;</code>
      */
     public com.google.protobuf.ByteString
@@ -435,7 +499,7 @@ public final class OrderRecordProto {
     private volatile java.lang.Object orderRecordOrderDetail_;
     /**
      * <pre>
-     *订单详情
+     *订单详情，可选
      * </pre>
      *
      * <code>optional string orderRecordOrderDetail = 6;</code>
@@ -454,7 +518,7 @@ public final class OrderRecordProto {
     }
     /**
      * <pre>
-     *订单详情
+     *订单详情，可选
      * </pre>
      *
      * <code>optional string orderRecordOrderDetail = 6;</code>
@@ -477,7 +541,7 @@ public final class OrderRecordProto {
     private volatile java.lang.Object orderRecordUserName_;
     /**
      * <pre>
-     *用户名
+     *用户名，可选
      * </pre>
      *
      * <code>optional string orderRecordUserName = 7;</code>
@@ -496,7 +560,7 @@ public final class OrderRecordProto {
     }
     /**
      * <pre>
-     *用户名
+     *用户名，可选
      * </pre>
      *
      * <code>optional string orderRecordUserName = 7;</code>
@@ -518,6 +582,10 @@ public final class OrderRecordProto {
     public static final int ORDERRECORDRETURNURL_FIELD_NUMBER = 8;
     private volatile java.lang.Object orderRecordReturnUrl_;
     /**
+     * <pre>
+     *，可选
+     * </pre>
+     *
      * <code>optional string orderRecordReturnUrl = 8;</code>
      */
     public java.lang.String getOrderRecordReturnUrl() {
@@ -533,6 +601,10 @@ public final class OrderRecordProto {
       }
     }
     /**
+     * <pre>
+     *，可选
+     * </pre>
+     *
      * <code>optional string orderRecordReturnUrl = 8;</code>
      */
     public com.google.protobuf.ByteString
@@ -552,6 +624,10 @@ public final class OrderRecordProto {
     public static final int ORDERRECORDNOTIFYURL_FIELD_NUMBER = 9;
     private volatile java.lang.Object orderRecordNotifyUrl_;
     /**
+     * <pre>
+     *，可选
+     * </pre>
+     *
      * <code>optional string orderRecordNotifyUrl = 9;</code>
      */
     public java.lang.String getOrderRecordNotifyUrl() {
@@ -567,6 +643,10 @@ public final class OrderRecordProto {
       }
     }
     /**
+     * <pre>
+     *，可选
+     * </pre>
+     *
      * <code>optional string orderRecordNotifyUrl = 9;</code>
      */
     public com.google.protobuf.ByteString
@@ -586,12 +666,20 @@ public final class OrderRecordProto {
     public static final int ORDERGOODSARRAY_FIELD_NUMBER = 10;
     private java.util.List<protobuf.http.OrderRecordProto.OrderGoodsSendData> orderGoodsArray_;
     /**
+     * <pre>
+     *最少有一个
+     * </pre>
+     *
      * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
      */
     public java.util.List<protobuf.http.OrderRecordProto.OrderGoodsSendData> getOrderGoodsArrayList() {
       return orderGoodsArray_;
     }
     /**
+     * <pre>
+     *最少有一个
+     * </pre>
+     *
      * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
      */
     public java.util.List<? extends protobuf.http.OrderRecordProto.OrderGoodsSendDataOrBuilder> 
@@ -599,18 +687,30 @@ public final class OrderRecordProto {
       return orderGoodsArray_;
     }
     /**
+     * <pre>
+     *最少有一个
+     * </pre>
+     *
      * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
      */
     public int getOrderGoodsArrayCount() {
       return orderGoodsArray_.size();
     }
     /**
+     * <pre>
+     *最少有一个
+     * </pre>
+     *
      * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
      */
     public protobuf.http.OrderRecordProto.OrderGoodsSendData getOrderGoodsArray(int index) {
       return orderGoodsArray_.get(index);
     }
     /**
+     * <pre>
+     *最少有一个
+     * </pre>
+     *
      * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
      */
     public protobuf.http.OrderRecordProto.OrderGoodsSendDataOrBuilder getOrderGoodsArrayOrBuilder(
@@ -1087,12 +1187,20 @@ public final class OrderRecordProto {
 
       private int hOpCode_ ;
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional int32 hOpCode = 1;</code>
        */
       public int getHOpCode() {
         return hOpCode_;
       }
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional int32 hOpCode = 1;</code>
        */
       public Builder setHOpCode(int value) {
@@ -1102,6 +1210,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional int32 hOpCode = 1;</code>
        */
       public Builder clearHOpCode() {
@@ -1114,6 +1226,7 @@ public final class OrderRecordProto {
       private java.lang.Object appId_ = "";
       /**
        * <pre>
+       *必有
        * </pre>
        *
        * <code>optional string appId = 2;</code>
@@ -1132,6 +1245,7 @@ public final class OrderRecordProto {
       }
       /**
        * <pre>
+       *必有
        * </pre>
        *
        * <code>optional string appId = 2;</code>
@@ -1151,6 +1265,7 @@ public final class OrderRecordProto {
       }
       /**
        * <pre>
+       *必有
        * </pre>
        *
        * <code>optional string appId = 2;</code>
@@ -1167,6 +1282,7 @@ public final class OrderRecordProto {
       }
       /**
        * <pre>
+       *必有
        * </pre>
        *
        * <code>optional string appId = 2;</code>
@@ -1179,6 +1295,7 @@ public final class OrderRecordProto {
       }
       /**
        * <pre>
+       *必有
        * </pre>
        *
        * <code>optional string appId = 2;</code>
@@ -1198,7 +1315,7 @@ public final class OrderRecordProto {
       private java.lang.Object orderRecordOrderId_ = "";
       /**
        * <pre>
-       *订单id与appid联合唯一
+       *订单id与appid联合唯一，必有
        * </pre>
        *
        * <code>optional string orderRecordOrderId = 3;</code>
@@ -1217,7 +1334,7 @@ public final class OrderRecordProto {
       }
       /**
        * <pre>
-       *订单id与appid联合唯一
+       *订单id与appid联合唯一，必有
        * </pre>
        *
        * <code>optional string orderRecordOrderId = 3;</code>
@@ -1237,7 +1354,7 @@ public final class OrderRecordProto {
       }
       /**
        * <pre>
-       *订单id与appid联合唯一
+       *订单id与appid联合唯一，必有
        * </pre>
        *
        * <code>optional string orderRecordOrderId = 3;</code>
@@ -1254,7 +1371,7 @@ public final class OrderRecordProto {
       }
       /**
        * <pre>
-       *订单id与appid联合唯一
+       *订单id与appid联合唯一，必有
        * </pre>
        *
        * <code>optional string orderRecordOrderId = 3;</code>
@@ -1267,7 +1384,7 @@ public final class OrderRecordProto {
       }
       /**
        * <pre>
-       *订单id与appid联合唯一
+       *订单id与appid联合唯一，必有
        * </pre>
        *
        * <code>optional string orderRecordOrderId = 3;</code>
@@ -1287,7 +1404,7 @@ public final class OrderRecordProto {
       private double orderRecordTotalPrice_ ;
       /**
        * <pre>
-       *总价格
+       *总价格，必有
        * </pre>
        *
        * <code>optional double orderRecordTotalPrice = 4;</code>
@@ -1297,7 +1414,7 @@ public final class OrderRecordProto {
       }
       /**
        * <pre>
-       *总价格
+       *总价格，必有
        * </pre>
        *
        * <code>optional double orderRecordTotalPrice = 4;</code>
@@ -1310,7 +1427,7 @@ public final class OrderRecordProto {
       }
       /**
        * <pre>
-       *总价格
+       *总价格，必有
        * </pre>
        *
        * <code>optional double orderRecordTotalPrice = 4;</code>
@@ -1324,6 +1441,10 @@ public final class OrderRecordProto {
 
       private java.lang.Object orderRecordUserId_ = "";
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional string orderRecordUserId = 5;</code>
        */
       public java.lang.String getOrderRecordUserId() {
@@ -1339,6 +1460,10 @@ public final class OrderRecordProto {
         }
       }
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional string orderRecordUserId = 5;</code>
        */
       public com.google.protobuf.ByteString
@@ -1355,6 +1480,10 @@ public final class OrderRecordProto {
         }
       }
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional string orderRecordUserId = 5;</code>
        */
       public Builder setOrderRecordUserId(
@@ -1368,6 +1497,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional string orderRecordUserId = 5;</code>
        */
       public Builder clearOrderRecordUserId() {
@@ -1377,6 +1510,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional string orderRecordUserId = 5;</code>
        */
       public Builder setOrderRecordUserIdBytes(
@@ -1394,7 +1531,7 @@ public final class OrderRecordProto {
       private java.lang.Object orderRecordOrderDetail_ = "";
       /**
        * <pre>
-       *订单详情
+       *订单详情，可选
        * </pre>
        *
        * <code>optional string orderRecordOrderDetail = 6;</code>
@@ -1413,7 +1550,7 @@ public final class OrderRecordProto {
       }
       /**
        * <pre>
-       *订单详情
+       *订单详情，可选
        * </pre>
        *
        * <code>optional string orderRecordOrderDetail = 6;</code>
@@ -1433,7 +1570,7 @@ public final class OrderRecordProto {
       }
       /**
        * <pre>
-       *订单详情
+       *订单详情，可选
        * </pre>
        *
        * <code>optional string orderRecordOrderDetail = 6;</code>
@@ -1450,7 +1587,7 @@ public final class OrderRecordProto {
       }
       /**
        * <pre>
-       *订单详情
+       *订单详情，可选
        * </pre>
        *
        * <code>optional string orderRecordOrderDetail = 6;</code>
@@ -1463,7 +1600,7 @@ public final class OrderRecordProto {
       }
       /**
        * <pre>
-       *订单详情
+       *订单详情，可选
        * </pre>
        *
        * <code>optional string orderRecordOrderDetail = 6;</code>
@@ -1483,7 +1620,7 @@ public final class OrderRecordProto {
       private java.lang.Object orderRecordUserName_ = "";
       /**
        * <pre>
-       *用户名
+       *用户名，可选
        * </pre>
        *
        * <code>optional string orderRecordUserName = 7;</code>
@@ -1502,7 +1639,7 @@ public final class OrderRecordProto {
       }
       /**
        * <pre>
-       *用户名
+       *用户名，可选
        * </pre>
        *
        * <code>optional string orderRecordUserName = 7;</code>
@@ -1522,7 +1659,7 @@ public final class OrderRecordProto {
       }
       /**
        * <pre>
-       *用户名
+       *用户名，可选
        * </pre>
        *
        * <code>optional string orderRecordUserName = 7;</code>
@@ -1539,7 +1676,7 @@ public final class OrderRecordProto {
       }
       /**
        * <pre>
-       *用户名
+       *用户名，可选
        * </pre>
        *
        * <code>optional string orderRecordUserName = 7;</code>
@@ -1552,7 +1689,7 @@ public final class OrderRecordProto {
       }
       /**
        * <pre>
-       *用户名
+       *用户名，可选
        * </pre>
        *
        * <code>optional string orderRecordUserName = 7;</code>
@@ -1571,6 +1708,10 @@ public final class OrderRecordProto {
 
       private java.lang.Object orderRecordReturnUrl_ = "";
       /**
+       * <pre>
+       *，可选
+       * </pre>
+       *
        * <code>optional string orderRecordReturnUrl = 8;</code>
        */
       public java.lang.String getOrderRecordReturnUrl() {
@@ -1586,6 +1727,10 @@ public final class OrderRecordProto {
         }
       }
       /**
+       * <pre>
+       *，可选
+       * </pre>
+       *
        * <code>optional string orderRecordReturnUrl = 8;</code>
        */
       public com.google.protobuf.ByteString
@@ -1602,6 +1747,10 @@ public final class OrderRecordProto {
         }
       }
       /**
+       * <pre>
+       *，可选
+       * </pre>
+       *
        * <code>optional string orderRecordReturnUrl = 8;</code>
        */
       public Builder setOrderRecordReturnUrl(
@@ -1615,6 +1764,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *，可选
+       * </pre>
+       *
        * <code>optional string orderRecordReturnUrl = 8;</code>
        */
       public Builder clearOrderRecordReturnUrl() {
@@ -1624,6 +1777,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *，可选
+       * </pre>
+       *
        * <code>optional string orderRecordReturnUrl = 8;</code>
        */
       public Builder setOrderRecordReturnUrlBytes(
@@ -1640,6 +1797,10 @@ public final class OrderRecordProto {
 
       private java.lang.Object orderRecordNotifyUrl_ = "";
       /**
+       * <pre>
+       *，可选
+       * </pre>
+       *
        * <code>optional string orderRecordNotifyUrl = 9;</code>
        */
       public java.lang.String getOrderRecordNotifyUrl() {
@@ -1655,6 +1816,10 @@ public final class OrderRecordProto {
         }
       }
       /**
+       * <pre>
+       *，可选
+       * </pre>
+       *
        * <code>optional string orderRecordNotifyUrl = 9;</code>
        */
       public com.google.protobuf.ByteString
@@ -1671,6 +1836,10 @@ public final class OrderRecordProto {
         }
       }
       /**
+       * <pre>
+       *，可选
+       * </pre>
+       *
        * <code>optional string orderRecordNotifyUrl = 9;</code>
        */
       public Builder setOrderRecordNotifyUrl(
@@ -1684,6 +1853,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *，可选
+       * </pre>
+       *
        * <code>optional string orderRecordNotifyUrl = 9;</code>
        */
       public Builder clearOrderRecordNotifyUrl() {
@@ -1693,6 +1866,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *，可选
+       * </pre>
+       *
        * <code>optional string orderRecordNotifyUrl = 9;</code>
        */
       public Builder setOrderRecordNotifyUrlBytes(
@@ -1720,6 +1897,10 @@ public final class OrderRecordProto {
           protobuf.http.OrderRecordProto.OrderGoodsSendData, protobuf.http.OrderRecordProto.OrderGoodsSendData.Builder, protobuf.http.OrderRecordProto.OrderGoodsSendDataOrBuilder> orderGoodsArrayBuilder_;
 
       /**
+       * <pre>
+       *最少有一个
+       * </pre>
+       *
        * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
        */
       public java.util.List<protobuf.http.OrderRecordProto.OrderGoodsSendData> getOrderGoodsArrayList() {
@@ -1730,6 +1911,10 @@ public final class OrderRecordProto {
         }
       }
       /**
+       * <pre>
+       *最少有一个
+       * </pre>
+       *
        * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
        */
       public int getOrderGoodsArrayCount() {
@@ -1740,6 +1925,10 @@ public final class OrderRecordProto {
         }
       }
       /**
+       * <pre>
+       *最少有一个
+       * </pre>
+       *
        * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
        */
       public protobuf.http.OrderRecordProto.OrderGoodsSendData getOrderGoodsArray(int index) {
@@ -1750,6 +1939,10 @@ public final class OrderRecordProto {
         }
       }
       /**
+       * <pre>
+       *最少有一个
+       * </pre>
+       *
        * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
        */
       public Builder setOrderGoodsArray(
@@ -1767,6 +1960,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *最少有一个
+       * </pre>
+       *
        * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
        */
       public Builder setOrderGoodsArray(
@@ -1781,6 +1978,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *最少有一个
+       * </pre>
+       *
        * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
        */
       public Builder addOrderGoodsArray(protobuf.http.OrderRecordProto.OrderGoodsSendData value) {
@@ -1797,6 +1998,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *最少有一个
+       * </pre>
+       *
        * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
        */
       public Builder addOrderGoodsArray(
@@ -1814,6 +2019,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *最少有一个
+       * </pre>
+       *
        * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
        */
       public Builder addOrderGoodsArray(
@@ -1828,6 +2037,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *最少有一个
+       * </pre>
+       *
        * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
        */
       public Builder addOrderGoodsArray(
@@ -1842,6 +2055,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *最少有一个
+       * </pre>
+       *
        * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
        */
       public Builder addAllOrderGoodsArray(
@@ -1857,6 +2074,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *最少有一个
+       * </pre>
+       *
        * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
        */
       public Builder clearOrderGoodsArray() {
@@ -1870,6 +2091,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *最少有一个
+       * </pre>
+       *
        * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
        */
       public Builder removeOrderGoodsArray(int index) {
@@ -1883,6 +2108,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *最少有一个
+       * </pre>
+       *
        * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
        */
       public protobuf.http.OrderRecordProto.OrderGoodsSendData.Builder getOrderGoodsArrayBuilder(
@@ -1890,6 +2119,10 @@ public final class OrderRecordProto {
         return getOrderGoodsArrayFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       *最少有一个
+       * </pre>
+       *
        * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
        */
       public protobuf.http.OrderRecordProto.OrderGoodsSendDataOrBuilder getOrderGoodsArrayOrBuilder(
@@ -1900,6 +2133,10 @@ public final class OrderRecordProto {
         }
       }
       /**
+       * <pre>
+       *最少有一个
+       * </pre>
+       *
        * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
        */
       public java.util.List<? extends protobuf.http.OrderRecordProto.OrderGoodsSendDataOrBuilder> 
@@ -1911,6 +2148,10 @@ public final class OrderRecordProto {
         }
       }
       /**
+       * <pre>
+       *最少有一个
+       * </pre>
+       *
        * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
        */
       public protobuf.http.OrderRecordProto.OrderGoodsSendData.Builder addOrderGoodsArrayBuilder() {
@@ -1918,6 +2159,10 @@ public final class OrderRecordProto {
             protobuf.http.OrderRecordProto.OrderGoodsSendData.getDefaultInstance());
       }
       /**
+       * <pre>
+       *最少有一个
+       * </pre>
+       *
        * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
        */
       public protobuf.http.OrderRecordProto.OrderGoodsSendData.Builder addOrderGoodsArrayBuilder(
@@ -1926,6 +2171,10 @@ public final class OrderRecordProto {
             index, protobuf.http.OrderRecordProto.OrderGoodsSendData.getDefaultInstance());
       }
       /**
+       * <pre>
+       *最少有一个
+       * </pre>
+       *
        * <code>repeated .protobuf.http.OrderGoodsSendData orderGoodsArray = 10;</code>
        */
       public java.util.List<protobuf.http.OrderRecordProto.OrderGoodsSendData.Builder> 
@@ -11697,50 +11946,90 @@ public final class OrderRecordProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     *必有
+     * </pre>
+     *
      * <code>optional string orderGoodsGoodsId = 1;</code>
      */
     java.lang.String getOrderGoodsGoodsId();
     /**
+     * <pre>
+     *必有
+     * </pre>
+     *
      * <code>optional string orderGoodsGoodsId = 1;</code>
      */
     com.google.protobuf.ByteString
         getOrderGoodsGoodsIdBytes();
 
     /**
+     * <pre>
+     *必有
+     * </pre>
+     *
      * <code>optional string orderGoodsName = 2;</code>
      */
     java.lang.String getOrderGoodsName();
     /**
+     * <pre>
+     *必有
+     * </pre>
+     *
      * <code>optional string orderGoodsName = 2;</code>
      */
     com.google.protobuf.ByteString
         getOrderGoodsNameBytes();
 
     /**
+     * <pre>
+     *必有
+     * </pre>
+     *
      * <code>optional double orderGoodsPrice = 3;</code>
      */
     double getOrderGoodsPrice();
 
     /**
+     * <pre>
+     *必有
+     * </pre>
+     *
      * <code>optional int32 orderGoodsNumber = 4;</code>
      */
     int getOrderGoodsNumber();
 
     /**
+     * <pre>
+     *可选
+     * </pre>
+     *
      * <code>optional string orderGoodsDetail = 5;</code>
      */
     java.lang.String getOrderGoodsDetail();
     /**
+     * <pre>
+     *可选
+     * </pre>
+     *
      * <code>optional string orderGoodsDetail = 5;</code>
      */
     com.google.protobuf.ByteString
         getOrderGoodsDetailBytes();
 
     /**
+     * <pre>
+     *可选
+     * </pre>
+     *
      * <code>optional string orderGoodsUrl = 6;</code>
      */
     java.lang.String getOrderGoodsUrl();
     /**
+     * <pre>
+     *可选
+     * </pre>
+     *
      * <code>optional string orderGoodsUrl = 6;</code>
      */
     com.google.protobuf.ByteString
@@ -11851,6 +12140,10 @@ public final class OrderRecordProto {
     public static final int ORDERGOODSGOODSID_FIELD_NUMBER = 1;
     private volatile java.lang.Object orderGoodsGoodsId_;
     /**
+     * <pre>
+     *必有
+     * </pre>
+     *
      * <code>optional string orderGoodsGoodsId = 1;</code>
      */
     public java.lang.String getOrderGoodsGoodsId() {
@@ -11866,6 +12159,10 @@ public final class OrderRecordProto {
       }
     }
     /**
+     * <pre>
+     *必有
+     * </pre>
+     *
      * <code>optional string orderGoodsGoodsId = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -11885,6 +12182,10 @@ public final class OrderRecordProto {
     public static final int ORDERGOODSNAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object orderGoodsName_;
     /**
+     * <pre>
+     *必有
+     * </pre>
+     *
      * <code>optional string orderGoodsName = 2;</code>
      */
     public java.lang.String getOrderGoodsName() {
@@ -11900,6 +12201,10 @@ public final class OrderRecordProto {
       }
     }
     /**
+     * <pre>
+     *必有
+     * </pre>
+     *
      * <code>optional string orderGoodsName = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -11919,6 +12224,10 @@ public final class OrderRecordProto {
     public static final int ORDERGOODSPRICE_FIELD_NUMBER = 3;
     private double orderGoodsPrice_;
     /**
+     * <pre>
+     *必有
+     * </pre>
+     *
      * <code>optional double orderGoodsPrice = 3;</code>
      */
     public double getOrderGoodsPrice() {
@@ -11928,6 +12237,10 @@ public final class OrderRecordProto {
     public static final int ORDERGOODSNUMBER_FIELD_NUMBER = 4;
     private int orderGoodsNumber_;
     /**
+     * <pre>
+     *必有
+     * </pre>
+     *
      * <code>optional int32 orderGoodsNumber = 4;</code>
      */
     public int getOrderGoodsNumber() {
@@ -11937,6 +12250,10 @@ public final class OrderRecordProto {
     public static final int ORDERGOODSDETAIL_FIELD_NUMBER = 5;
     private volatile java.lang.Object orderGoodsDetail_;
     /**
+     * <pre>
+     *可选
+     * </pre>
+     *
      * <code>optional string orderGoodsDetail = 5;</code>
      */
     public java.lang.String getOrderGoodsDetail() {
@@ -11952,6 +12269,10 @@ public final class OrderRecordProto {
       }
     }
     /**
+     * <pre>
+     *可选
+     * </pre>
+     *
      * <code>optional string orderGoodsDetail = 5;</code>
      */
     public com.google.protobuf.ByteString
@@ -11971,6 +12292,10 @@ public final class OrderRecordProto {
     public static final int ORDERGOODSURL_FIELD_NUMBER = 6;
     private volatile java.lang.Object orderGoodsUrl_;
     /**
+     * <pre>
+     *可选
+     * </pre>
+     *
      * <code>optional string orderGoodsUrl = 6;</code>
      */
     public java.lang.String getOrderGoodsUrl() {
@@ -11986,6 +12311,10 @@ public final class OrderRecordProto {
       }
     }
     /**
+     * <pre>
+     *可选
+     * </pre>
+     *
      * <code>optional string orderGoodsUrl = 6;</code>
      */
     public com.google.protobuf.ByteString
@@ -12361,6 +12690,10 @@ public final class OrderRecordProto {
 
       private java.lang.Object orderGoodsGoodsId_ = "";
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional string orderGoodsGoodsId = 1;</code>
        */
       public java.lang.String getOrderGoodsGoodsId() {
@@ -12376,6 +12709,10 @@ public final class OrderRecordProto {
         }
       }
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional string orderGoodsGoodsId = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -12392,6 +12729,10 @@ public final class OrderRecordProto {
         }
       }
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional string orderGoodsGoodsId = 1;</code>
        */
       public Builder setOrderGoodsGoodsId(
@@ -12405,6 +12746,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional string orderGoodsGoodsId = 1;</code>
        */
       public Builder clearOrderGoodsGoodsId() {
@@ -12414,6 +12759,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional string orderGoodsGoodsId = 1;</code>
        */
       public Builder setOrderGoodsGoodsIdBytes(
@@ -12430,6 +12779,10 @@ public final class OrderRecordProto {
 
       private java.lang.Object orderGoodsName_ = "";
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional string orderGoodsName = 2;</code>
        */
       public java.lang.String getOrderGoodsName() {
@@ -12445,6 +12798,10 @@ public final class OrderRecordProto {
         }
       }
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional string orderGoodsName = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -12461,6 +12818,10 @@ public final class OrderRecordProto {
         }
       }
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional string orderGoodsName = 2;</code>
        */
       public Builder setOrderGoodsName(
@@ -12474,6 +12835,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional string orderGoodsName = 2;</code>
        */
       public Builder clearOrderGoodsName() {
@@ -12483,6 +12848,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional string orderGoodsName = 2;</code>
        */
       public Builder setOrderGoodsNameBytes(
@@ -12499,12 +12868,20 @@ public final class OrderRecordProto {
 
       private double orderGoodsPrice_ ;
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional double orderGoodsPrice = 3;</code>
        */
       public double getOrderGoodsPrice() {
         return orderGoodsPrice_;
       }
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional double orderGoodsPrice = 3;</code>
        */
       public Builder setOrderGoodsPrice(double value) {
@@ -12514,6 +12891,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional double orderGoodsPrice = 3;</code>
        */
       public Builder clearOrderGoodsPrice() {
@@ -12525,12 +12906,20 @@ public final class OrderRecordProto {
 
       private int orderGoodsNumber_ ;
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional int32 orderGoodsNumber = 4;</code>
        */
       public int getOrderGoodsNumber() {
         return orderGoodsNumber_;
       }
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional int32 orderGoodsNumber = 4;</code>
        */
       public Builder setOrderGoodsNumber(int value) {
@@ -12540,6 +12929,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *必有
+       * </pre>
+       *
        * <code>optional int32 orderGoodsNumber = 4;</code>
        */
       public Builder clearOrderGoodsNumber() {
@@ -12551,6 +12944,10 @@ public final class OrderRecordProto {
 
       private java.lang.Object orderGoodsDetail_ = "";
       /**
+       * <pre>
+       *可选
+       * </pre>
+       *
        * <code>optional string orderGoodsDetail = 5;</code>
        */
       public java.lang.String getOrderGoodsDetail() {
@@ -12566,6 +12963,10 @@ public final class OrderRecordProto {
         }
       }
       /**
+       * <pre>
+       *可选
+       * </pre>
+       *
        * <code>optional string orderGoodsDetail = 5;</code>
        */
       public com.google.protobuf.ByteString
@@ -12582,6 +12983,10 @@ public final class OrderRecordProto {
         }
       }
       /**
+       * <pre>
+       *可选
+       * </pre>
+       *
        * <code>optional string orderGoodsDetail = 5;</code>
        */
       public Builder setOrderGoodsDetail(
@@ -12595,6 +13000,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *可选
+       * </pre>
+       *
        * <code>optional string orderGoodsDetail = 5;</code>
        */
       public Builder clearOrderGoodsDetail() {
@@ -12604,6 +13013,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *可选
+       * </pre>
+       *
        * <code>optional string orderGoodsDetail = 5;</code>
        */
       public Builder setOrderGoodsDetailBytes(
@@ -12620,6 +13033,10 @@ public final class OrderRecordProto {
 
       private java.lang.Object orderGoodsUrl_ = "";
       /**
+       * <pre>
+       *可选
+       * </pre>
+       *
        * <code>optional string orderGoodsUrl = 6;</code>
        */
       public java.lang.String getOrderGoodsUrl() {
@@ -12635,6 +13052,10 @@ public final class OrderRecordProto {
         }
       }
       /**
+       * <pre>
+       *可选
+       * </pre>
+       *
        * <code>optional string orderGoodsUrl = 6;</code>
        */
       public com.google.protobuf.ByteString
@@ -12651,6 +13072,10 @@ public final class OrderRecordProto {
         }
       }
       /**
+       * <pre>
+       *可选
+       * </pre>
+       *
        * <code>optional string orderGoodsUrl = 6;</code>
        */
       public Builder setOrderGoodsUrl(
@@ -12664,6 +13089,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *可选
+       * </pre>
+       *
        * <code>optional string orderGoodsUrl = 6;</code>
        */
       public Builder clearOrderGoodsUrl() {
@@ -12673,6 +13102,10 @@ public final class OrderRecordProto {
         return this;
       }
       /**
+       * <pre>
+       *可选
+       * </pre>
+       *
        * <code>optional string orderGoodsUrl = 6;</code>
        */
       public Builder setOrderGoodsUrlBytes(

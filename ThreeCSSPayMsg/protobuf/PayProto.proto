@@ -8,3 +8,20 @@ message GetPayHTMLS{
 	int32 hOpCode=1;
 	string payHtml=2;//支付界面
 }
+message GetReturnUrlC{
+	int32 hOpCode=1;
+	string orderRecordId=2;//订单id
+}
+message GetReturnUrlS{
+	int32 hOpCode=1;
+	string returnUrl=2;//回调地址
+}
+message VerifyNotifyC{
+	int32 hOpCode=1;
+	string notifyId=2;//通知id
+	string appId=3;//应用id
+}
+message VerifyNotifyS{
+	int32 hOpCode=1;
+	int32 result=2;//1有，2没有
+}

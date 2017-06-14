@@ -59,6 +59,30 @@ public final class PCErrorProto {
      * <code>ERROR_CODE_4 = 4;</code>
      */
     ERROR_CODE_4(4),
+    /**
+     * <pre>
+     *订单状态不合法
+     * </pre>
+     *
+     * <code>ERROR_CODE_5 = 5;</code>
+     */
+    ERROR_CODE_5(5),
+    /**
+     * <pre>
+     *创建notify失败
+     * </pre>
+     *
+     * <code>ERROR_CODE_6 = 6;</code>
+     */
+    ERROR_CODE_6(6),
+    /**
+     * <pre>
+     *获取returnurl失败
+     * </pre>
+     *
+     * <code>ERROR_CODE_7 = 7;</code>
+     */
+    ERROR_CODE_7(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -102,6 +126,30 @@ public final class PCErrorProto {
      * <code>ERROR_CODE_4 = 4;</code>
      */
     public static final int ERROR_CODE_4_VALUE = 4;
+    /**
+     * <pre>
+     *订单状态不合法
+     * </pre>
+     *
+     * <code>ERROR_CODE_5 = 5;</code>
+     */
+    public static final int ERROR_CODE_5_VALUE = 5;
+    /**
+     * <pre>
+     *创建notify失败
+     * </pre>
+     *
+     * <code>ERROR_CODE_6 = 6;</code>
+     */
+    public static final int ERROR_CODE_6_VALUE = 6;
+    /**
+     * <pre>
+     *获取returnurl失败
+     * </pre>
+     *
+     * <code>ERROR_CODE_7 = 7;</code>
+     */
+    public static final int ERROR_CODE_7_VALUE = 7;
 
 
     public final int getNumber() {
@@ -127,6 +175,9 @@ public final class PCErrorProto {
         case 2: return ERROR_CODE_2;
         case 3: return ERROR_CODE_3;
         case 4: return ERROR_CODE_4;
+        case 5: return ERROR_CODE_5;
+        case 6: return ERROR_CODE_6;
+        case 7: return ERROR_CODE_7;
         default: return null;
       }
     }
@@ -917,10 +968,11 @@ public final class PCErrorProto {
       "\n\022PCErrorProto.proto\022\rprotobuf.http\"q\n\007P" +
       "CError\022\017\n\007hOpCode\030\001 \001(\005\022-\n\terrorCode\030\002 \001" +
       "(\0162\032.protobuf.http.PCErrorCode\022\024\n\014errorH" +
-      "OpCode\030\003 \001(\005\022\020\n\010extraMsg\030\004 \001(\t*g\n\013PCErro" +
-      "rCode\022\020\n\014ERROR_CODE_0\020\000\022\020\n\014ERROR_CODE_1\020" +
-      "\001\022\020\n\014ERROR_CODE_2\020\002\022\020\n\014ERROR_CODE_3\020\003\022\020\n" +
-      "\014ERROR_CODE_4\020\004b\006proto3"
+      "OpCode\030\003 \001(\005\022\020\n\010extraMsg\030\004 \001(\t*\235\001\n\013PCErr" +
+      "orCode\022\020\n\014ERROR_CODE_0\020\000\022\020\n\014ERROR_CODE_1" +
+      "\020\001\022\020\n\014ERROR_CODE_2\020\002\022\020\n\014ERROR_CODE_3\020\003\022\020" +
+      "\n\014ERROR_CODE_4\020\004\022\020\n\014ERROR_CODE_5\020\005\022\020\n\014ER" +
+      "ROR_CODE_6\020\006\022\020\n\014ERROR_CODE_7\020\007b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
