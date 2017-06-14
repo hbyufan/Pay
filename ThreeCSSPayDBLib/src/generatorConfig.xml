@@ -62,6 +62,7 @@
         <table tableName="order_record"/>
         <table tableName="order_goods"/>
         <table tableName="pay_notify_log"/>
+        <table tableName="notify"/>
         
 	</context>
 </generatorConfiguration>

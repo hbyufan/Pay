@@ -51,5 +51,6 @@
         <mapper resource="dao/mappers/ext/OrderRecordMapperExt.xml" />
         <mapper resource="dao/mappers/base/OrderGoodsMapper.xml" />
         <mapper resource="dao/mappers/base/PayNotifyLogMapper.xml" />
+        <mapper resource="dao/mappers/base/NotifyMapper.xml" />
 	</mappers>
 </configuration> 
