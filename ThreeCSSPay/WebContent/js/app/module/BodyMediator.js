@@ -24,6 +24,8 @@ function BodyMediator() {
 				$T.moduleManager.loadModule("html/order_record_list.html", document.getElementById("body"), "body", $T.orderRecordListMediator);
 			}else if (data[0].body == "pay") {
 				$T.moduleManager.loadModule("html/pay.html", document.getElementById("body"), "body", $T.payMediator);
+			}else if (data[0].body == "notify") {
+				$T.moduleManager.loadModule("html/notify.html", document.getElementById("body"), "body", $T.notifyMediator);
 			}
 			break;
 		}

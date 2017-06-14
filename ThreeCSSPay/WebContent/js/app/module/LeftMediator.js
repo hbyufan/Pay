@@ -6,6 +6,7 @@ function LeftMediator() {
 		$("#left_button2").on("click", this.onClick2);
 		$("#left_button3").on("click", this.onClick3);
 		$("#left_button4").on("click", this.onClick4);
+		$("#left_button5").on("click", this.onClick5);
 	}
 	// 注销方法
 	this.dispose = function() {
@@ -31,6 +32,9 @@ function LeftMediator() {
 	}
 	this.onClick4 = function(event) {
 		$T.viewManager.notifyObservers($T.viewManager.getNotification($T.notificationExt.CHANGE_BODY, "pay"));
+	}
+	this.onClick5 = function(event) {
+		$T.viewManager.notifyObservers($T.viewManager.getNotification($T.notificationExt.CHANGE_BODY, "notify"));
 	}
 
 }
