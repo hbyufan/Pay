@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2017-06-08 07:30:30
+Date: 2017-06-14 06:51:20
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,6 +30,25 @@ CREATE TABLE `app` (
   `app_notify_url` varchar(2000) DEFAULT NULL,
   PRIMARY KEY (`app_id`),
   UNIQUE KEY `app_key` (`app_key`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for notify
+-- ----------------------------
+DROP TABLE IF EXISTS `notify`;
+CREATE TABLE `notify` (
+  `notify_id` varchar(64) NOT NULL,
+  `order_record_id` varchar(64) NOT NULL,
+  `notify_create_time` datetime NOT NULL,
+  `notify_expire_time` datetime NOT NULL,
+  `notify_type` tinyint(4) NOT NULL COMMENT '1：return 2:notify',
+  `app_id` varchar(64) NOT NULL,
+  `notify_result` varchar(255) DEFAULT NULL COMMENT '类型2需要得到结果',
+  PRIMARY KEY (`notify_id`),
+  KEY `order_record_id` (`order_record_id`),
+  KEY `app_id` (`app_id`),
+  CONSTRAINT `notify_ibfk_1` FOREIGN KEY (`order_record_id`) REFERENCES `order_record` (`order_record_id`),
+  CONSTRAINT `notify_ibfk_2` FOREIGN KEY (`app_id`) REFERENCES `app` (`app_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
