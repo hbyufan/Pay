@@ -4,5 +4,10 @@
 "alipay_key":["","MD5密钥，安全检验码，由数字和字母组成的32位字符串，查看地址：https://b.alipay.com/order/pidAndKey.htm"],
 "alipay_notify_url":["http://localhost:8081/ThreeCSSPay/alipay_notify","服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问"],
 "alipay_return_url":["http://localhost:8081/ThreeCSSPay/alipay_return","页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问"],
-"ucenter_url":["http://localhost:8080/ThreeCSSIdentity/s","用户中心地址"]
+"ucenter_url":["http://localhost:8080/ThreeCSSIdentity/s","用户中心地址"],
+"pay_success_url":["http://localhost/PayCenterClient/paySuccess.html","支付成功界面"],
+"pay_fail_url":["http://localhost/PayCenterClient/payFail.html","支付失败界面"],
+"notify_expire_time":[300000,"通知过期时间5分钟"],
+"max_notify_time":[5,"最大推送次数"],
+"notify_interval":[60000,"推送间隔"]
 }
