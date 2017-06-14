@@ -14,7 +14,7 @@ public class TokenHttpFilter implements IHttpFilter {
 	@Override
 	public boolean httpFilter(HSession hSession) throws HttpErrorException {
 		if (hSession.headParam.token == null) {
-			if (HOpCodePayCenter.LOGIN == hSession.headParam.hOpCode) {
+			if (HOpCodePayCenter.LOGIN == hSession.headParam.hOpCode || HOpCodePayCenter.VERIFY_NOTIFY == hSession.headParam.hOpCode || HOpCodePayCenter.CREATE_ORDER_RECORD == hSession.headParam.hOpCode) {
 				// 可以通过
 				return true;
 			} else {

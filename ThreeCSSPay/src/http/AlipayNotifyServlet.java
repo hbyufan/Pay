@@ -19,6 +19,10 @@ import config.OrderRecordConfig;
 import dao.model.ext.OrderRecordExt;
 import log.LogManagerPayCenter;
 import monitor.RunMonitor;
+import msg.MsgManager;
+import msg.MsgOpCodePayCenter;
+import msg.MsgPacket;
+import protobuf.msg.AddNotifyOuterClass.AddNotify;
 import tool.StringUtil;
 
 public class AlipayNotifyServlet extends HttpServlet {
@@ -109,7 +113,14 @@ public class AlipayNotifyServlet extends HttpServlet {
 			if (Double.valueOf(params.get("total_fee")).doubleValue() != orderRecord.getOrderRecordTotalPrice().doubleValue()) {
 				runMonitor.putMonitor("total_fee:" + params.get("total_fee") + "，与订单价格：" + orderRecord.getOrderRecordTotalPrice() + "不相符");
 				LogManagerPayCenter.alipayLog.error(runMonitor.toString("alipay_notify"));
-				OrderRecordAction.setOrderRecordPriceNotSame(orderRecord.getOrderRecordId(), Double.valueOf(params.get("total_fee")).doubleValue(), params.get("buyer_email"), params.get("trade_no"), params.get("notify_time"), params.get("buyer_id"), params.get("trade_status"));
+				boolean result = OrderRecordAction.setOrderRecordPriceNotSame(orderRecord.getOrderRecordId(), Double.valueOf(params.get("total_fee")).doubleValue(), params.get("buyer_email"), params.get("trade_no"), params.get("notify_time"), params.get("buyer_id"), params.get("trade_status"));
+				// 第一次修改成功，推送
+				if (result) {
+					AddNotify.Builder builder = AddNotify.newBuilder();
+					builder.setOrderRecordId(orderRecord.getOrderRecordId());
+					MsgPacket msgPacket = new MsgPacket(MsgOpCodePayCenter.ADD_NOTIFY, builder.build(), MsgManager.USE_MSG_MONITOR);
+					MsgManager.dispatchMsg(msgPacket);
+				}
 				response.getWriter().print("fail");
 				return;
 			}
@@ -126,7 +137,16 @@ public class AlipayNotifyServlet extends HttpServlet {
 
 				// 注意：
 				// 退款日期超过可退款期限后（如三个月可退款），支付宝系统发送该交易状态通知
-				OrderRecordAction.setOrderRecordSuccess(orderRecord.getOrderRecordId(), params.get("buyer_email"), params.get("trade_no"), params.get("notify_time"), params.get("buyer_id"), params.get("trade_status"));
+				boolean result = OrderRecordAction.setOrderRecordSuccess(orderRecord.getOrderRecordId(), params.get("buyer_email"), params.get("trade_no"), params.get("notify_time"), params.get("buyer_id"), params.get("trade_status"));
+				runMonitor.putMonitor("修改订单结果：" + result);
+				// 第一次修改成功，推送
+				if (result) {
+					AddNotify.Builder builder = AddNotify.newBuilder();
+					builder.setOrderRecordId(orderRecord.getOrderRecordId());
+					MsgPacket msgPacket = new MsgPacket(MsgOpCodePayCenter.ADD_NOTIFY, builder.build(), MsgManager.USE_MSG_MONITOR);
+					MsgManager.dispatchMsg(msgPacket);
+					runMonitor.putMonitor("发送推送请求：" + orderRecord.getOrderRecordId());
+				}
 				orderRecord = OrderRecordAction.getOrderRecordById(out_trade_no);
 				if (orderRecord.getOrderRecordPayStatus().intValue() == OrderRecordConfig.PAY_STATUS_ALREADY) {
 					LogManagerPayCenter.alipayLog.info(runMonitor.toString("alipay_notify"));
@@ -141,7 +161,16 @@ public class AlipayNotifyServlet extends HttpServlet {
 
 				// 注意：
 				// 付款完成后，支付宝系统发送该交易状态通知
-				OrderRecordAction.setOrderRecordSuccess(orderRecord.getOrderRecordId(), params.get("buyer_email"), params.get("trade_no"), params.get("notify_time"), params.get("buyer_id"), params.get("trade_status"));
+				boolean result = OrderRecordAction.setOrderRecordSuccess(orderRecord.getOrderRecordId(), params.get("buyer_email"), params.get("trade_no"), params.get("notify_time"), params.get("buyer_id"), params.get("trade_status"));
+				runMonitor.putMonitor("修改订单结果：" + result);
+				// 第一次修改成功，推送
+				if (result) {
+					AddNotify.Builder builder = AddNotify.newBuilder();
+					builder.setOrderRecordId(orderRecord.getOrderRecordId());
+					MsgPacket msgPacket = new MsgPacket(MsgOpCodePayCenter.ADD_NOTIFY, builder.build(), MsgManager.USE_MSG_MONITOR);
+					MsgManager.dispatchMsg(msgPacket);
+					runMonitor.putMonitor("发送推送请求：" + orderRecord.getOrderRecordId());
+				}
 				orderRecord = OrderRecordAction.getOrderRecordById(out_trade_no);
 				if (orderRecord.getOrderRecordPayStatus().intValue() == OrderRecordConfig.PAY_STATUS_ALREADY) {
 					LogManagerPayCenter.alipayLog.info(runMonitor.toString("alipay_notify"));

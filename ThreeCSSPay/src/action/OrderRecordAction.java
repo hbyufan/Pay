@@ -10,6 +10,8 @@ import config.OrderRecordConfig;
 import dao.dao.base.OrderGoodsMapper;
 import dao.dao.base.OrderRecordMapper;
 import dao.dao.ext.OrderRecordMapperExt;
+import dao.model.base.App;
+import dao.model.base.Notify;
 import dao.model.base.OrderGoods;
 import dao.model.base.OrderGoodsCriteria;
 import dao.model.base.OrderRecord;
@@ -424,6 +426,7 @@ public class OrderRecordAction {
 			// 如果订单已经完成或者订单已经不合法，就不做修改了。
 			List<Byte> list = new ArrayList<>();
 			list.add((byte) OrderRecordConfig.PAY_STATUS_ALREADY);
+			list.add((byte) OrderRecordConfig.PAY_STATUS_UNQUALIFIED);
 			criteriaOrderRecord.andOrderRecordPayStatusNotIn(list);
 			int result = orderRecordMapper.updateByExampleSelective(orderRecordNew, orderRecordCriteria);
 			if (result != 1) {
@@ -483,6 +486,7 @@ public class OrderRecordAction {
 			// 如果订单完成或者不合法不做修改了。
 			List<Byte> list = new ArrayList<>();
 			list.add((byte) OrderRecordConfig.PAY_STATUS_UNQUALIFIED);
+			list.add((byte) OrderRecordConfig.PAY_STATUS_ALREADY);
 			criteriaOrderRecord.andOrderRecordPayStatusNotIn(list);
 			int result = orderRecordMapper.updateByExampleSelective(orderRecordNew, orderRecordCriteria);
 			if (result != 1) {
@@ -515,5 +519,37 @@ public class OrderRecordAction {
 			}
 		}
 		return subject;
+	}
+
+	public static String getReturnUrl(OrderRecordExt orderRecord, Notify notify) {
+		String returnUrl = orderRecord.getOrderRecordReturnUrl();
+		if (StringUtil.stringIsNull(returnUrl)) {
+			App app = AppAction.getAppById(orderRecord.getAppId());
+			if (app == null) {
+				return null;
+			}
+			returnUrl = app.getAppReturnUrl();
+		}
+		if (StringUtil.stringIsNull(returnUrl)) {
+			return null;
+		}
+		returnUrl += "?orderRecordId=" + orderRecord.getOrderRecordId() + "&orderRecordOrderId=" + orderRecord.getOrderRecordOrderId() + "&orderRecordPayStatus=" + orderRecord.getOrderRecordPayStatus() + "&notifyId=" + notify.getNotifyId();
+		return returnUrl;
+	}
+
+	public static String getNotifyUrl(OrderRecordExt orderRecord, Notify notify) {
+		String notifyUrl = orderRecord.getOrderRecordNotifyUrl();
+		if (StringUtil.stringIsNull(notifyUrl)) {
+			App app = AppAction.getAppById(orderRecord.getAppId());
+			if (app == null) {
+				return null;
+			}
+			notifyUrl = app.getAppNotifyUrl();
+		}
+		if (StringUtil.stringIsNull(notifyUrl)) {
+			return null;
+		}
+		notifyUrl += "?orderRecordId=" + orderRecord.getOrderRecordId() + "&orderRecordOrderId=" + orderRecord.getOrderRecordOrderId() + "&orderRecordPayStatus=" + orderRecord.getOrderRecordPayStatus() + "&notifyId=" + notify.getNotifyId();
+		return notifyUrl;
 	}
 }

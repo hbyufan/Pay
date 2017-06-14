@@ -7,8 +7,10 @@ import http.HOpCodePayCenter;
 import http.HOpCodeUCenter;
 import init.IExpand;
 import init.Init;
+import msg.MsgOpCodePayCenter;
 import service.AppService;
 import service.LoginService;
+import service.NotifyService;
 import service.OrderRecordService;
 import service.PayService;
 
@@ -20,6 +22,7 @@ public class Expand implements IExpand {
 		CommonConfigPayCenter.init();
 		HOpCodePayCenter.init();
 		HOpCodeUCenter.init();
+		MsgOpCodePayCenter.init();
 		Init.registerService(AppService.class);
 		Init.registerService(OrderRecordService.class);
 		Init.registerService(PayService.class);
@@ -28,7 +31,7 @@ public class Expand implements IExpand {
 
 	@Override
 	public void threadInit() throws Exception {
-
+		Init.registerService(NotifyService.class);
 	}
 
 }

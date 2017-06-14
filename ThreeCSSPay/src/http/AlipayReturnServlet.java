@@ -15,10 +15,15 @@ import com.alipay.util.AlipayNotify;
 
 import action.OrderRecordAction;
 import action.PayNotifyLogAction;
+import config.CommonConfigPayCenter;
 import config.OrderRecordConfig;
 import dao.model.ext.OrderRecordExt;
 import log.LogManagerPayCenter;
 import monitor.RunMonitor;
+import msg.MsgManager;
+import msg.MsgOpCodePayCenter;
+import msg.MsgPacket;
+import protobuf.msg.AddNotifyOuterClass.AddNotify;
 import tool.StringUtil;
 
 public class AlipayReturnServlet extends HttpServlet {
@@ -44,7 +49,7 @@ public class AlipayReturnServlet extends HttpServlet {
 				valueStr = (i == values.length - 1) ? valueStr + values[i] : valueStr + values[i] + ",";
 			}
 			// 乱码解决，这段代码在出现乱码时使用。如果mysign和sign不相等也可以使用这段代码转化
-			//valueStr = new String(valueStr.getBytes("ISO-8859-1"), "utf-8");
+			// valueStr = new String(valueStr.getBytes("ISO-8859-1"), "utf-8");
 			params.put(name, valueStr);
 		}
 		runMonitor.putMonitor("alipay_return解析参数:" + params.toString());
@@ -53,7 +58,8 @@ public class AlipayReturnServlet extends HttpServlet {
 		if (StringUtil.stringIsNull(request.getParameter("out_trade_no"))) {
 			runMonitor.putMonitor("alipay_return(out_trade_no):为空");
 			LogManagerPayCenter.alipayLog.error(runMonitor.toString("alipay_return"));
-			//跳至不合法页
+			// 跳至不合法页
+			response.sendRedirect(CommonConfigPayCenter.PAY_FAIL_URL);
 			return;
 		}
 		String out_trade_no = new String(request.getParameter("out_trade_no").getBytes("ISO-8859-1"), "UTF-8");
@@ -62,7 +68,8 @@ public class AlipayReturnServlet extends HttpServlet {
 		if (StringUtil.stringIsNull(request.getParameter("trade_no"))) {
 			runMonitor.putMonitor("alipay_return(trade_no):为空");
 			LogManagerPayCenter.alipayLog.error(runMonitor.toString("alipay_return"));
-			//跳至不合法页
+			// 跳至不合法页
+			response.sendRedirect(CommonConfigPayCenter.PAY_FAIL_URL);
 			return;
 		}
 		String trade_no = new String(request.getParameter("trade_no").getBytes("ISO-8859-1"), "UTF-8");
@@ -71,7 +78,8 @@ public class AlipayReturnServlet extends HttpServlet {
 		if (StringUtil.stringIsNull(request.getParameter("trade_status"))) {
 			runMonitor.putMonitor("alipay_return(trade_status):为空");
 			LogManagerPayCenter.alipayLog.error(runMonitor.toString("alipay_return"));
-			//跳至不合法页
+			// 跳至不合法页
+			response.sendRedirect(CommonConfigPayCenter.PAY_FAIL_URL);
 			return;
 		}
 		String trade_status = new String(request.getParameter("trade_status").getBytes("ISO-8859-1"), "UTF-8");
@@ -87,32 +95,44 @@ public class AlipayReturnServlet extends HttpServlet {
 			if (orderRecord == null) {
 				runMonitor.putMonitor("订单id为：" + out_trade_no + "不存在");
 				LogManagerPayCenter.alipayLog.error(runMonitor.toString("alipay_return"));
-				//跳至不合法页
+				// 跳至不合法页
+				response.sendRedirect(CommonConfigPayCenter.PAY_FAIL_URL);
 				return;
 			}
 			if (StringUtil.stringIsNull(params.get("seller_id"))) {
 				runMonitor.putMonitor("seller_id不存在");
 				LogManagerPayCenter.alipayLog.error(runMonitor.toString("alipay_return"));
-				//跳至不合法页
+				// 跳至不合法页
+				response.sendRedirect(CommonConfigPayCenter.PAY_FAIL_URL);
 				return;
 			}
 			if (!params.get("seller_id").equals(AlipayConfig.seller_id)) {
 				runMonitor.putMonitor("seller_id:" + params.get("seller_id") + "，跟支付中心不匹配");
 				LogManagerPayCenter.alipayLog.error(runMonitor.toString("alipay_return"));
-				//跳至不合法页
+				// 跳至不合法页
+				response.sendRedirect(CommonConfigPayCenter.PAY_FAIL_URL);
 				return;
 			}
 			if (StringUtil.stringIsNull(params.get("total_fee"))) {
 				runMonitor.putMonitor("total_fee不存在");
 				LogManagerPayCenter.alipayLog.error(runMonitor.toString("alipay_return"));
-				//跳至不合法页
+				// 跳至不合法页
+				response.sendRedirect(CommonConfigPayCenter.PAY_FAIL_URL);
 				return;
 			}
 			if (Double.valueOf(params.get("total_fee")).doubleValue() != orderRecord.getOrderRecordTotalPrice().doubleValue()) {
 				runMonitor.putMonitor("total_fee:" + params.get("total_fee") + "，与订单价格：" + orderRecord.getOrderRecordTotalPrice() + "不相符");
 				LogManagerPayCenter.alipayLog.error(runMonitor.toString("alipay_return"));
-				OrderRecordAction.setOrderRecordPriceNotSame(orderRecord.getOrderRecordId(), Double.valueOf(params.get("total_fee")).doubleValue(), params.get("buyer_email"), params.get("trade_no"), params.get("notify_time"), params.get("buyer_id"), params.get("trade_status"));
-				//跳至不合法页
+				boolean result = OrderRecordAction.setOrderRecordPriceNotSame(orderRecord.getOrderRecordId(), Double.valueOf(params.get("total_fee")).doubleValue(), params.get("buyer_email"), params.get("trade_no"), params.get("notify_time"), params.get("buyer_id"), params.get("trade_status"));
+				// 第一次修改成功，推送
+				if (result) {
+					AddNotify.Builder builder = AddNotify.newBuilder();
+					builder.setOrderRecordId(orderRecord.getOrderRecordId());
+					MsgPacket msgPacket = new MsgPacket(MsgOpCodePayCenter.ADD_NOTIFY, builder.build(), MsgManager.USE_MSG_MONITOR);
+					MsgManager.dispatchMsg(msgPacket);
+				}
+				// 跳至不合法页
+				response.sendRedirect(CommonConfigPayCenter.PAY_FAIL_URL);
 				return;
 			}
 			//////////////////////////////////////////////////////////////////////////////////////////
@@ -123,16 +143,27 @@ public class AlipayReturnServlet extends HttpServlet {
 				// 判断该笔订单是否在商户网站中已经做过处理
 				// 如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
 				// 如果有做过处理，不执行商户的业务程序
-				OrderRecordAction.setOrderRecordSuccess(orderRecord.getOrderRecordId(), params.get("buyer_email"), params.get("trade_no"), params.get("notify_time"), params.get("buyer_id"), params.get("trade_status"));
+				boolean result = OrderRecordAction.setOrderRecordSuccess(orderRecord.getOrderRecordId(), params.get("buyer_email"), params.get("trade_no"), params.get("notify_time"), params.get("buyer_id"), params.get("trade_status"));
+				// 第一次修改成功，推送
+				runMonitor.putMonitor("修改订单结果：" + result);
+				if (result) {
+					AddNotify.Builder builder = AddNotify.newBuilder();
+					builder.setOrderRecordId(orderRecord.getOrderRecordId());
+					MsgPacket msgPacket = new MsgPacket(MsgOpCodePayCenter.ADD_NOTIFY, builder.build(), MsgManager.USE_MSG_MONITOR);
+					MsgManager.dispatchMsg(msgPacket);
+					runMonitor.putMonitor("发送推送请求：" + orderRecord.getOrderRecordId());
+				}
 				orderRecord = OrderRecordAction.getOrderRecordById(out_trade_no);
 				if (orderRecord.getOrderRecordPayStatus().intValue() == OrderRecordConfig.PAY_STATUS_ALREADY) {
 					LogManagerPayCenter.alipayLog.info(runMonitor.toString("alipay_return"));
-					//跳至支付成功页
+					// 跳至支付成功页
+					response.sendRedirect(CommonConfigPayCenter.PAY_SUCCESS_URL + "?orderRecordId=" + orderRecord.getOrderRecordId());
 					return;
 				}
 			}
 			LogManagerPayCenter.alipayLog.error(runMonitor.toString("alipay_return"));
-			//跳至不合法页
+			// 跳至不合法页
+			response.sendRedirect(CommonConfigPayCenter.PAY_FAIL_URL);
 			// 该页面可做页面美工编辑
 			// System.out.println("验证成功<br />");
 			// ——请根据您的业务逻辑来编写程序（以上代码仅作参考）——
@@ -143,7 +174,8 @@ public class AlipayReturnServlet extends HttpServlet {
 			PayNotifyLogAction.createPayNotifyLog(out_trade_no, params.toString());
 
 			LogManagerPayCenter.alipayLog.error(runMonitor.toString("alipay_return"));
-			//跳至不合法页
+			// 跳至不合法页
+			response.sendRedirect(CommonConfigPayCenter.PAY_FAIL_URL);
 			// 该页面可做页面美工编辑
 			// System.out.println("验证失败");
 		}
