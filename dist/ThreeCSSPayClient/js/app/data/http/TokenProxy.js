@@ -16,7 +16,7 @@ function TokenProxy() {
         $T.httpUtil.send(sendParam);
     }
     this.getTokenSuccess = function (result, sendParam) {
-        $T.viewManager.notifyObservers($T.viewManager.getNotification($T.notificationExt.LOGIN_SUCCESS,result.tokenId));
+        $T.viewManager.notifyObservers($T.viewManager.getNotification($T.notificationExt.LOGIN_SUCCESS, result.tokenId));
     }
     this.getTokenFail = function (result, sendParam) {
 
