@@ -9,6 +9,7 @@ import log.LogManager;
 
 public class TimeUtils {
 	public static SimpleDateFormat longDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	public static SimpleDateFormat shortDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
 	public static String dateToString(Date date) {
 		if (date == null) {
@@ -30,5 +31,9 @@ public class TimeUtils {
 			return null;
 		}
 
+	}
+
+	public static String getDateStartString(Date date) {
+		return shortDateFormat.format(date) + " 00:00:00";
 	}
 }
