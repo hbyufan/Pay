@@ -160,6 +160,9 @@ public class PayService implements IHttpListener, IService {
 		AlipayConfig.notify_url = CommonConfigPayCenter.ALIPAY_NOTIFY_URL;
 		AlipayConfig.return_url = CommonConfigPayCenter.ALIPAY_RETURN_URL;
 		AlipayConfig.key = CommonConfigPayCenter.ALIPAY_KEY;
+		AlipayConfig.sign_type = CommonConfigPayCenter.ALIPAY_ENCRYPT_TYPE;
+		AlipayConfig.private_key = CommonConfigPayCenter.ALIPAY_PRIVATE_KEY;
+		AlipayConfig.alipay_public_key = CommonConfigPayCenter.ALIPAY_ALIPAY_PUBLIC_KEY;
 	}
 
 }

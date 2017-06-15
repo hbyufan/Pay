@@ -11,6 +11,9 @@ public class CommonConfigPayCenter extends CommonConfig {
 	public static String ALIPAY_KEY;
 	public static String ALIPAY_NOTIFY_URL;
 	public static String ALIPAY_RETURN_URL;
+	public static String ALIPAY_ENCRYPT_TYPE;
+	public static String ALIPAY_PRIVATE_KEY;
+	public static String ALIPAY_ALIPAY_PUBLIC_KEY;
 
 	public static String UCENTER_URL;
 
@@ -31,6 +34,9 @@ public class CommonConfigPayCenter extends CommonConfig {
 		ALIPAY_KEY = configExt.getJSONArray("alipay_key").getString(0);
 		ALIPAY_NOTIFY_URL = configExt.getJSONArray("alipay_notify_url").getString(0);
 		ALIPAY_RETURN_URL = configExt.getJSONArray("alipay_return_url").getString(0);
+		ALIPAY_ENCRYPT_TYPE = configExt.getJSONArray("alipay_encrypt_type").getString(0);
+		ALIPAY_PRIVATE_KEY = configExt.getJSONArray("alipay_private_key").getString(0);
+		ALIPAY_ALIPAY_PUBLIC_KEY = configExt.getJSONArray("alipay_alipay_public_key").getString(0);
 
 		UCENTER_URL = configExt.getJSONArray("ucenter_url").getString(0);
 		PAY_SUCCESS_URL = configExt.getJSONArray("pay_success_url").getString(0);

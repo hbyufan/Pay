@@ -14,6 +14,7 @@ import org.dom4j.io.SAXReader;
 
 import com.alipay.config.AlipayConfig;
 import com.alipay.sign.MD5;
+import com.alipay.sign.RSA;
 
 /* *
  *类名：AlipaySubmit
@@ -43,6 +44,8 @@ public class AlipaySubmit {
         String mysign = "";
         if(AlipayConfig.sign_type.equals("MD5") ) {
         	mysign = MD5.sign(prestr, AlipayConfig.key, AlipayConfig.input_charset);
+        }else if(AlipayConfig.sign_type.equals("RSA") ){
+        	mysign = RSA.sign(prestr, AlipayConfig.private_key, AlipayConfig.input_charset);
         }
         return mysign;
     }

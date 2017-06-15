@@ -35,7 +35,7 @@ public class OrderRecordService implements IHttpListener {
 	public Map<Integer, String> getHttps() throws Exception {
 		HashMap<Integer, String> map = new HashMap<>();
 		map.put(HOpCodePayCenter.CREATE_ORDER_RECORD, "createOrderRecordHandle");
-		map.put(HOpCodePayCenter.UPDATE_ORDER_RECORD, "updateOrderRecordHandle");
+		//map.put(HOpCodePayCenter.UPDATE_ORDER_RECORD, "updateOrderRecordHandle");
 		map.put(HOpCodePayCenter.GET_ORDER_RECORD, "getOrderRecordHandle");
 		map.put(HOpCodePayCenter.GET_ORDER_RECORD_LIST, "getOrderRecordListHandle");
 		return map;
