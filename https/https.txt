@@ -1,0 +1,25 @@
+生成ssl服务器证书
+keytool -genkey -alias ThreeCSSPay -keypass 123456 -keyalg RSA -keysize 1024 -validity 365 -keystore C:/Users/Administrator/Desktop/https/ThreeCSSPay.keystore -storepass 123456
+
+//启动443端口
+<Connector port="443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+               maxThreads="150" SSLEnabled="true" scheme="https" secure="true"
+			   clientAuth="false" sslProtocol="TLS"
+			   keystoreFile="/home/ThreeCSSPay.keystore" keystorePass="123456">
+    </Connector>
+//配置web.xml
+<login-config>
+		<!-- Authorization setting for SSL -->
+		<auth-method>CLIENT-CERT</auth-method>
+		<realm-name>Client Cert Users-only Area</realm-name>
+	</login-config>
+	<security-constraint>
+		<!-- Authorization setting for SSL -->
+		<web-resource-collection >
+			<web-resource-name >SSL</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
