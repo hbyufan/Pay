@@ -7,15 +7,29 @@ keytool -genkey -alias ThreeCSSPay -keypass 123456 -keyalg RSA -keysize 1024 -va
 			   clientAuth="false" sslProtocol="TLS"
 			   keystoreFile="/home/ThreeCSSPay.keystore" keystorePass="123456">
     </Connector>
+	
+	
+	
+	<Connector port="443"
+		protocol="org.apache.coyote.http11.Http11NioProtocol"
+		maxThreads="150"
+		SSLEnabled="true"
+		scheme="https"
+		secure="true"
+		keystoreFile="/home/证书名.pfx"
+		keystoreType="PKCS12"
+		keystorePass="证书密码"
+		clientAuth="false"
+		ciphers="TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
+		SSLProtocol="TLSv1+TLSv1.1+TLSv1.2"
+		SSLCipherSuite="ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4"/>
 //配置web.xml
-<login-config>
-		<!-- Authorization setting for SSL -->
+	<login-config>
 		<auth-method>CLIENT-CERT</auth-method>
 		<realm-name>Client Cert Users-only Area</realm-name>
 	</login-config>
 	<security-constraint>
-		<!-- Authorization setting for SSL -->
-		<web-resource-collection >
+		<web-resource-collection>
 			<web-resource-name >SSL</web-resource-name>
 			<url-pattern>/*</url-pattern>
 		</web-resource-collection>
