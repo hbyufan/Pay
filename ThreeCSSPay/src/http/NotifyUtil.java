@@ -17,7 +17,11 @@ public class NotifyUtil {
 		CloseableHttpClient httpClient = null;
 		CloseableHttpResponse httpResponse = null;
 		try {
-			httpClient = HttpClients.createDefault();
+			if (url.startsWith("https")) {
+				httpClient = HttpClients.custom().setSSLSocketFactory(HttpUtil.sslSocketFactory).build();
+			} else {
+				httpClient = HttpClients.createDefault();
+			}
 			HttpGet httpGet = new HttpGet(url);
 			LogManager.httpLog.info("发送地址：" + url);
 			httpResponse = httpClient.execute(httpGet);
