@@ -31,7 +31,7 @@
 		<copy file="${Server.dir}/dist/ThreeCSSPay.war" todir="${dist}" />
 		<copy file="${MsgExt.dir}/dist/ThreeCSSPayMsg.jar" todir="${dist}" />
 		<copy file="${Server.dir}/src/ThreeCSSPay.properties" todir="${dist}" />
-		<copy file="${Work.dir}/pay.sql" todir="${dist}" />
+		<copy file="${Work.dir}/threecsspay.sql" todir="${dist}" />
 		<copydir dest="${dist}/ThreeCSSPayConfigData" src="${ConfigData.dir}"></copydir>
 		<copydir dest="${dist}/ThreeCSSPayClient" src="${Work.dir}/ThreeCSSPayClient"></copydir>
 	</target>
