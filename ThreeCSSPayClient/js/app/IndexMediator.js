@@ -9,6 +9,7 @@ function IndexMediator() {
         var orderRecordId = $T.getUrlParam.getUrlParam("orderRecordId");
         if (orderRecordId == null) {
             alert("订单记录为空");
+            window.location.href='login.html'
             return;
         }
         $T.orderRecordProxy.getOrderRecord(orderRecordId);
