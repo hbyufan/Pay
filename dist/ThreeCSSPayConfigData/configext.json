@@ -8,8 +8,8 @@
 "alipay_private_key":["","商户的私钥,需要PKCS8格式，RSA公私钥生成：https://doc.open.alipay.com/doc2/detail.htm?spm=a219a.7629140.0.0.nBDxfy&treeId=58&articleId=103242&docType=1"],
 "alipay_alipay_public_key":["","支付宝的公钥,查看地址：https://b.alipay.com/order/pidAndKey.htm"],
 "ucenter_url":["http://www.threecss.com/ThreeCSSIdentity/s","用户中心地址"],
-"pay_success_url":["http://www.threecss.com/ThreeCSSPayClient/paySuccess.html","支付成功界面"],
-"pay_fail_url":["http://www.threecss.com/ThreeCSSPayClient/payFail.html","支付失败界面"],
+"pay_success_url":["http://pay.threecss.com/paySuccess.html","支付成功界面"],
+"pay_fail_url":["http://pay.threecss.com/payFail.html","支付失败界面"],
 "notify_expire_time":[300000,"通知过期时间5分钟"],
 "max_notify_time":[5,"最大推送次数"],
 "notify_interval":[60000,"推送间隔"]
