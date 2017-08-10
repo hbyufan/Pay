@@ -3,7 +3,7 @@ function IndexMediator() {
     this.orderRecord;
     this.init = function (view) {
         if ($T.cookieParam.getCookieParam($T.cookieName.TOKEN) == null) {
-            alert("未登录");
+            window.location.href='login.html'
             return;
         }
         var orderRecordId = $T.getUrlParam.getUrlParam("orderRecordId");
