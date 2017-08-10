@@ -19,6 +19,7 @@
     $T.version.loadScript("js/app/CookieName.js");
     $T.version.loadScript("js/app/data/http/TokenProxy.js");
     $T.version.loadScript("js/app/data/http/AppProxy.js");
+    $T.version.loadScript("js/app/data/http/OrderRecordProxy.js");
     $T.version.loadScript("js/app/RecordMediator.js");
     $T.version.loadScript("js/app/GetUrlParam.js");
 
@@ -87,15 +88,15 @@
             </div>
             <div>商品名</div>
             <div class="inputBox">
-                <input type="text" id="orderGoodsName"/>
+                <input type="text" id="orderGoodsName" value="企业网盘"/>
             </div>
             <div>商品单价</div>
             <div class="inputBox">
-                <input type="text" id="orderGoodsPrice"/>
+                <input type="text" id="orderGoodsPrice" value="0.01"/>
             </div>
             <div>商品数量</div>
             <div class="inputBox">
-                <input type="text" id="orderGoodsNumber"/>
+                <input type="text" id="orderGoodsNumber" value="2"/>
             </div>
             <div>商品详情</div>
             <div class="inputBox">
@@ -107,9 +108,9 @@
             </div>
             <div>商品类型数量</div>
             <div class="inputBox">
-                <input type="text" id="orderGoodsNum"/>
+                <input type="text" id="orderGoodsNum" value="2"/>
             </div>
-            <a class="loginBtn" href="javascript:;" id="loginUCenter">生成</a>
+            <a class="loginBtn" href="javascript:;" id="createRecord">生成订单</a>
         </div>
     </div>
 </div>
