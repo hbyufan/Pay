@@ -91,7 +91,7 @@ function AppProxy() {
         $T.httpUtil.send(sendParam);
     }
     this.getAppListSuccess = function (result, sendParam) {
-
+        $T.viewManager.notifyObservers($T.viewManager.getNotification($T.notificationExt.GET_APP_LIST_SUCCESS, result));
     }
     this.getAppListFail = function (result, sendParam) {
 

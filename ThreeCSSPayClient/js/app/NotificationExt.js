@@ -9,5 +9,7 @@ function NotificationExt() {
     this.GET_RETURN_URL_SUCCESS = "getReturnUrlSuccess";
     this.GET_RETURN_URL_FAIL = "getReturnUrlFail";
 
+    this.GET_APP_LIST_SUCCESS = "getAppListSuccess";
+
 }
 $T.notificationExt = new NotificationExt();
