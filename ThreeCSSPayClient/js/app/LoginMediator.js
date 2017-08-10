@@ -12,7 +12,7 @@ function LoginMediator() {
     this.handleNotification = function (data) {
         switch (data[0].name) {
             case $T.notificationExt.LOGIN_SUCCESS:
-                window.location.href = "loginPayCenter.html?token=" + data[0].body;
+                window.location.href = "record.html?token=" + data[0].body;
                 break;
         }
     }
