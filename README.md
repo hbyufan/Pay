@@ -39,8 +39,6 @@ threecss-identity
 
 	CentOS-7-1611
 
-	支持Html5浏览器
-
 
 发布项目：
 
