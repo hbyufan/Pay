@@ -1,5 +1,7 @@
 # threecss-pay
 
+[![Build Status](https://travis-ci.org/dianbaer/threecss-pay.svg?branch=master)](https://travis-ci.org/dianbaer/threecss-pay)
+
 threecss-pay是基于ThreeCSS分布式框架开发的一款支付平台。
 
 该项目由ThreeCSSPay(服务器)与ThreeCSSPayClient(客户端)两个子项目组成。
