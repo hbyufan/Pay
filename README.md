@@ -1,6 +1,7 @@
 # threecss-pay
 
 [![Build Status](https://travis-ci.org/dianbaer/threecss-pay.svg?branch=master)](https://travis-ci.org/dianbaer/threecss-pay)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7c50e9cf367c4181872018d351838a0e)](https://www.codacy.com/app/232365732/threecss-pay?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dianbaer/threecss-pay&amp;utm_campaign=Badge_Grade)
 
 threecss-pay是基于ThreeCSS分布式框架开发的一款支付平台。
 
