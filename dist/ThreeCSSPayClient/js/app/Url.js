@@ -1,6 +1,6 @@
 function Url() {
-	this.url = "http://www.threecss.com/ThreeCSSPay/s";
-	this.ucUrl = "http://www.threecss.com/ThreeCSSIdentity/s";
-	this.clientUrl = "http://pay.threecss.com/"
+	this.url = "https://www.threecss.com/ThreeCSSPay/s";
+	this.ucUrl = "https://www.threecss.com/ThreeCSSIdentity/s";
+	this.clientUrl = "https://pay.threecss.com/"
 }
 $T.url = new Url();
