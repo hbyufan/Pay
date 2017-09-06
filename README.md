@@ -82,7 +82,7 @@ threecss-pay功能：
 	
 3、通过token与支付中心产生的订单号进行支付（基于threecss-identity的token，如果对接其他身份系统需要二次开发）
 	
-	例如：https://paycenter.threecss.com/loginPayCenter.html?token=248778127e2f4937b570825a5f80b61a&orderRecordId=2d67e747337240e98dbc202dbe92538e
+	例如：https://xxx/loginPayCenter.html?token=248778127e2f4937b570825a5f80b61a&orderRecordId=2d67e747337240e98dbc202dbe92538e
 	
 4、支付环节（目前只支持支付宝）
 
@@ -91,5 +91,5 @@ threecss-pay功能：
 5、支付成功回调及通知（基于ThreeCSS服务器统一线程模型，高效且线程安全）
 
 	创建订单时，填写回调地址与通知地址，支付成功后会回调相应URL并通知相应URL
-	例如：https://paycenter.threecss.com/success.html?orderRecordId=3440682343a646fc804cc79014375345&orderRecordOrderId=F264DA7A-1DED-474B-A559-51826316D02E&orderRecordPayStatus=2&notifyId=44bc0a7ff7b1428991b2df7420c59779
+	例如：https://xxx/success.html?orderRecordId=3440682343a646fc804cc79014375345&orderRecordOrderId=F264DA7A-1DED-474B-A559-51826316D02E&orderRecordPayStatus=2&notifyId=44bc0a7ff7b1428991b2df7420c59779
 
