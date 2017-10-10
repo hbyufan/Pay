@@ -1,6 +1,6 @@
 # threecss-pay
 
-[![Build Status](https://travis-ci.org/dianbaer/threecss-pay.svg?branch=master)](https://travis-ci.org/dianbaer/threecss-pay)
+[![Build Status](https://travis-ci.org/dianbaer/Pay.svg?branch=master)](https://travis-ci.org/dianbaer/Pay)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/7c50e9cf367c4181872018d351838a0e)](https://www.codacy.com/app/232365732/threecss-pay?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dianbaer/threecss-pay&amp;utm_campaign=Badge_Grade)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
