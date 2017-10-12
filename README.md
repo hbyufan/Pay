@@ -8,7 +8,14 @@
 
 该项目由PayServer(服务器)与PayClient(客户端)两个子项目组成。
 
+基于grain
 
+https://github.com/dianbaer/grain
+
+	grain-httpserver
+	grain-httpclient
+	grain-mariadb
+	grain-threadmsg
 
 
 ## 依赖身份系统：
