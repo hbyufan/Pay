@@ -1,5 +1,0 @@
-syntax = "proto3";
-package protobuf.msg;
-message AddNotify{
-	string orderRecordId=1;
-}
