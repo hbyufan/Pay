@@ -6,9 +6,9 @@
 
 # Pay是一个支付平台。
 
-该项目由PayServer(服务器)与PayClient(客户端)两个子项目组成。
+Pay由PayServer(服务器)与PayClient(客户端)两个项目组成。
 
-基于grain
+### 基于grain RPC框架
 
 https://github.com/dianbaer/grain
 
@@ -18,9 +18,10 @@ https://github.com/dianbaer/grain
 	grain-threadmsg
 
 
-## 依赖身份系统：
+## 依赖身份系统Identity：
 
-Identity
+
+https://github.com/dianbaer/Identity
 
 
 ## 打版本：在项目根目录下，执行
@@ -30,11 +31,56 @@ Identity
 
 ## 配置：
 
-	dist/PayClient/js/app/Url.js-----访问支付服务器与身份系统服务器
 
-	dist/PayConfig/mybatis-config.xml---访问支付数据库
+dist/PayClient/js/app/Url.js-----访问支付服务器与身份系统服务器
 
-	dist/PayServer.properties----PayConfig在服务器路径及一些参数
+	function Url() {
+		//支付平台地址
+		this.url = "http://localhost:8081/PayServer/s";
+		//身份系统地址
+		this.ucUrl = "http://localhost:8080/IdentityServer/s";
+		//支付客户端本项目地址
+		this.clientUrl = "http://localhost/PayClient/"
+	}
+	$T.url = new Url();
+
+
+dist/PayConfig/mybatis-config.xml---访问支付数据库
+
+
+dist/PayServer.properties----PayConfig在服务器路径及一些参数
+
+	#mybatis-config.xml在服务器的地址
+	config_dir = C:/Users/admin/Desktop/github/Pay/trunk/PayConfig
+	#支付宝partner
+	alipay_partner=
+	#支付宝seller_id
+	alipay_seller_id=
+	#支付宝md5
+	alipay_key=
+	#支付宝通知地址
+	alipay_notify_url=http://localhost:8081/PayServer/alipay_notify
+	#支付宝回调地址
+	alipay_return_url=http://localhost:8081/PayServer/alipay_return
+	#使用RSA还是MD5加密
+	alipay_encrypt_type=RSA
+	#RSA私钥
+	alipay_private_key=
+	#RSA共钥
+	alipay_alipay_public_key=
+	#身份系统地址
+	ucenter_url=http://localhost:8080/IdentityServer/s
+	#支付成功后，跳转的支付客户端地址
+	pay_success_url=http://localhost/PayClient/paySuccess.html
+	#支付失败后，跳转的支付客户端地址
+	pay_fail_url=http://localhost/PayClient/payFail.html
+	#通知过期时间
+	notify_expire_time=300000
+	#最大通知次数
+	max_notify_time=5
+	#通知间隔
+	notify_interval=60000
+
 
 
 ## 推荐环境：
